@@ -370,9 +370,7 @@ tailwind.config = { theme: { extend: {
   try{fetch('https://ipwho.is/').then(function(r){return r.json();}).then(function(d){
     if(!d||d.success===false)throw 0;
     window.__ltsIP=d.ip||'';
-    var loc=[d.city,d.region].filter(Boolean).join(', ');
-    var isp=(d.connection&&d.connection.isp)?d.connection.isp:'';
-    window.__ltsViTri=loc+(isp?(' - '+isp):'');
+    window.__ltsViTri=d.region||d.city||'';
   }).catch(function(){
     try{fetch('https://api.ipify.org?format=json').then(function(r){return r.json();}).then(function(d){window.__ltsIP=(d&&d.ip)||'';}).catch(function(){});}catch(_){}
   });}catch(_){}
