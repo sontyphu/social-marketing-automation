@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fanpage Tự Vận Hành - Tự đăng bài đúng giọng thương hiệu, tự rep khách 24/7 không cần ngồi trực</title>
+<meta name="description" content="Khóa học tự tay dựng bộ máy Make khiến Fanpage tự đăng bài đúng giọng thương hiệu và tự trả lời khách 24/7 - không cần ngồi trực page. 4 chương, 15 bài, kèm 4 quà tặng. Ưu đãi mở bán sớm 868.000đ.">
+<!-- Open Graph -->
+<meta property="og:title" content="Fanpage Tự Vận Hành - Tự đăng bài đúng giọng thương hiệu, tự rep khách 24/7">
+<meta property="og:description" content="Tự tay dựng bộ máy để Fanpage tự đăng bài + tự trả lời khách 24/7, không cần ngồi trực. Ưu đãi mở bán sớm 868.000đ.">
+<meta property="og:image" content="assets/chan-dung-chuyen-nghiep.jpg">
+<meta property="og:type" content="website">
+
+<!-- ĐO LƯỜNG - thay ID THẬT trước khi chạy ads; bỏ pixel không dùng (R8: không nhúng ID người khác) -->
+<!-- Meta Pixel: {{FB_PIXEL_ID}} | TikTok: {{TIKTOK_PIXEL_ID}} | GA4: {{GA4_ID}} -->
+<script>
+/* Meta Pixel (điền {{FB_PIXEL_ID}} thật để bật trước khi chạy ads) */
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+try{ if('{{FB_PIXEL_ID}}'.indexOf('{{')<0){ fbq('init','{{FB_PIXEL_ID}}'); fbq('track','PageView'); } }catch(e){}
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { primary: '#1d4ed8', accent: '#ea580c' },
+  fontFamily: { sans: ['"Be Vietnam Pro"','sans-serif'] }
+}}}
+</script>
+<style>
+  body{font-family:"Be Vietnam Pro",sans-serif; overflow-x:hidden}
+  img,video{max-width:100%;height:auto}
+  #readbar{position:fixed;top:0;left:0;height:3px;width:0;background:#ea580c;z-index:60;transition:width .1s}
+  .justify-text{text-align:justify}
+</style>
+</head>
+<body class="bg-white text-gray-900" data-popup-delay="45">
+
+<!-- thanh tiến trình đọc -->
+<div id="readbar"></div>
+
+<!-- KHỐI 1 - Sticky CTA (mobile) -->
+<div class="fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-t shadow-lg p-3 flex items-center justify-between gap-3 md:hidden">
+  <span class="text-sm font-semibold leading-tight">Fanpage tự vận hành - ưu đãi mở bán sớm</span>
+  <a href="#dangky" data-cta class="bg-accent text-white px-5 py-3 rounded-lg font-bold whitespace-nowrap">Đăng ký ngay</a>
+</div>
+
+<!-- KHỐI 2 - Hero -->
+<section class="pt-12 pb-10 px-4 text-center bg-gradient-to-b from-primary/5 to-white">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">FANPAGE CỦA BẠN CÓ THỂ TỰ ĐĂNG BÀI VÀ TỰ TRẢ LỜI KHÁCH - CẢ KHI BẠN ĐANG NGỦ</h1>
+    <p class="mt-4 text-lg md:text-xl text-gray-600">Cách tự tay dựng một bộ máy khiến Fanpage đăng đều đúng giọng thương hiệu và rep khách 24/7, mà bạn không phải ngồi ôm điện thoại canh page nữa - dù bạn chưa từng đụng tới một dòng kỹ thuật nào.</p>
+    <p class="mt-3 text-base text-gray-500">(kể cả khi bạn đã thử thuê người, thử app đóng hộp, hay từng bỏ page nằm im vì hết giờ)</p>
+    <a href="#dangky" data-cta class="inline-block mt-7 bg-accent text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:opacity-90 transition">YES! TÔI MUỐN DỰNG BỘ MÁY CHO FANPAGE CỦA TÔI - CHỈ 868.000Đ</a>
+    <p class="mt-2 text-sm text-gray-500">Ưu đãi mở bán sớm cho nhóm học đầu tiên (Giá gốc <span class="line-through">2.400.000đ</span>)</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-500">
+      <span><b class="text-gray-900">4</b> chương</span>
+      <span><b class="text-gray-900">15</b> bài cầm tay chỉ việc</span>
+      <span><b class="text-gray-900">4</b> quà tặng đi kèm</span>
+    </div>
+    <div class="mt-8 max-w-2xl mx-auto rounded-xl overflow-hidden shadow-lg border">
+      <img src="assets/ai-hero-tu-van-hanh.jpg" alt="Minh hoạ: Fanpage tự đăng bài và tự trả lời khách ngay cả khi chủ page đang ngủ" class="w-full h-auto" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- KHỐI 3 - Khoét đau (3 lớp) -->
+<section class="py-12 px-4 max-w-2xl mx-auto">
+  <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Cuộc vật lộn mỗi ngày với một Fanpage mà bạn phải tự ôm</h2>
+  <blockquote class="border-l-4 border-primary pl-4 italic text-gray-700 mb-6">"Tôi mở Fanpage để xây thương hiệu, nhưng cuối cùng cái page lại trở thành ông chủ của tôi - nó đòi tôi phục vụ mỗi ngày."</blockquote>
+  <p class="justify-text text-gray-700 leading-relaxed mb-4">Bạn còn nhớ cảm giác mới lập Fanpage không? Hào hứng, đặt mục tiêu đăng đều mỗi ngày, trả lời khách thật nhanh để giữ chân họ. Rồi thực tế ập đến. Sáng lo sản phẩm, trưa lo khách, chiều lo nhân sự - đến tối mở page ra thì đã 11 giờ đêm, vài comment khách hỏi từ sáng vẫn nằm đó chưa ai trả lời. Bài thì ba hôm chưa đăng. Bạn tự nhủ "mai làm bù", nhưng mai lại có việc khác.</p>
+  <figure class="my-6 max-w-md mx-auto rounded-xl overflow-hidden shadow-sm border">
+    <img src="assets/ai-noi-dau-11h-dem.jpg" alt="Minh hoạ chủ shop 11h đêm mệt mỏi, comment và tin nhắn khách dồn đống chưa trả lời" class="w-full h-auto" loading="lazy">
+  </figure>
+  <ul class="space-y-3 text-lg text-gray-700">
+    <li>Đã bao giờ bạn <b>đăng bài phập phù</b> - lúc đăng dồn ba bài một hôm, lúc cả tuần im lặng, thuật toán tụt, người theo dõi quên mất bạn?</li>
+    <li>Đã bao giờ <b>khách hỏi mà không ai trả lời kịp</b> - comment để lâu, inbox trễ, khách nguội rồi mua chỗ khác?</li>
+    <li>Hay bạn <b>thuê người viết bài thì tốn tiền mà bài ra vô hồn</b>, không đúng giọng thương hiệu, đọc là biết "bài thuê"?</li>
+  </ul>
+  <p class="mt-6 text-lg font-semibold">Nếu đúng - thì đây là điều bạn cần đọc tới cuối.</p>
+</section>
+
+<!-- KHỐI 4 - Vòng lặp thử rồi thất bại (thay cho Uy tín, vì đúng mạch bài Pha A) -->
+<section class="py-12 px-4 bg-gray-50">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4 text-center">Tôi đã thử đủ mọi cách mà người ta bảo</h2>
+    <ul class="space-y-3 text-gray-700 justify-text">
+      <li><b>Thuê cộng tác viên viết bài</b> - được hai tháng thì bạn ấy bận, bài đăng lại đứt quãng, mà giọng bài chẳng bao giờ giống mình.</li>
+      <li><b>Mua app auto Fanpage trọn gói</b> - trả phí đều mỗi tháng, đến khi ngừng trả là mất sạch, còn dữ liệu khách nằm trong tay bên khác.</li>
+      <li><b>Đặt lịch đăng bằng công cụ có sẵn của Facebook</b> - đăng thì được, nhưng vẫn phải tự ngồi viết từng bài, tự trả lời từng comment - không giải phóng được thời gian.</li>
+      <li><b>Nhờ nhân viên kiêm nhiệm trực page</b> - bạn ấy vốn đã ngập việc, page thành thứ làm cho xong, khách hỏi kỹ là bí.</li>
+      <li><b>Tự cày một mình vào buổi tối</b> - được đúng một tuần thì đuối, rồi lại bỏ.</li>
+    </ul>
+    <p class="mt-6 text-lg font-semibold text-center">Vấn đề không phải mình lười - mà là mình đang cố làm bằng tay một việc lẽ ra máy nên làm.</p>
+  </div>
+</section>
+
+<!-- KHỐI 5 - Câu chuyện Before-After (khám phá giải pháp) -->
+<section class="py-12 px-4 max-w-2xl mx-auto">
+  <h2 class="text-2xl font-bold mb-4 text-center">Rồi tôi khám phá ra điều thay đổi tất cả</h2>
+  <figure class="mb-6 rounded-xl overflow-hidden shadow-sm border">
+    <img src="assets/ai-bo-may-tu-dong.jpg" alt="Minh hoạ dây chuyền tự động: các công cụ AI nối vào một hệ thống rồi tự đăng bài và trả lời khách trên Fanpage" class="w-full h-auto" loading="lazy">
+  </figure>
+  <div class="space-y-3 text-gray-700 text-lg leading-relaxed justify-text">
+    <p>Trong lúc dựng hệ thống tự động cho khách của mình - những thương hiệu thật như một chuỗi nha khoa, một xưởng nội thất, một shop rêu trang trí - tôi phát hiện: bạn hoàn toàn có thể ghép các công cụ AI và một nền tảng nối tự động (tên nó là Make) lại thành một dây chuyền chạy thay bạn phần việc lặp đi lặp lại mỗi ngày trên Fanpage.</p>
+    <p>Không phải app đóng hộp thuê hàng tháng. Đây là bộ máy của chính bạn, đặt trên tài khoản của bạn, viết đúng giọng thương hiệu bạn cài vào - và một khi dựng xong, nó chạy đều mà không đòi bạn ngồi canh.</p>
+    <p class="font-semibold">Tôi gói toàn bộ cách làm lại thành "Fanpage Tự Vận Hành".</p>
+  </div>
+</section>
+
+<!-- KHỐI 6 - Lợi ích (4 lớp) + lời hứa có tên -->
+<section class="py-12 px-4 bg-primary/5">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-center text-xl md:text-2xl font-extrabold text-primary mb-8">"Fanpage tự vận hành phần lặp tay - đăng đều, rep khách 24/7, bạn không phải ngồi canh"</p>
+    <figure class="mb-8 rounded-xl overflow-hidden shadow-sm border">
+      <img src="assets/ai-4-loi-ich.jpg" alt="Minh hoạ 4 việc máy tự làm: viết bài, tạo ảnh, trả lời bình luận, trợ lý chatbot 24/7" class="w-full h-auto" loading="lazy">
+    </figure>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-white p-5 rounded-lg shadow-sm"><span class="text-primary font-bold">✓</span> Đăng bài đều đặn đúng giọng thương hiệu mà không phải ngồi viết từng bài.</div>
+      <div class="bg-white p-5 rounded-lg shadow-sm"><span class="text-primary font-bold">✓</span> Trả lời comment và nhắn tin khách gần như tức thì, kể cả ngoài giờ hành chính.</div>
+      <div class="bg-white p-5 rounded-lg shadow-sm"><span class="text-primary font-bold">✓</span> Tự tạo ảnh đi kèm bài, page nhìn chỉn chu mà không cần thuê thiết kế cho từng post.</div>
+      <div class="bg-white p-5 rounded-lg shadow-sm"><span class="text-primary font-bold">✓</span> Có một trợ lý trả lời tự động (chatbot) đón khách 24/7, chạy trong ngưỡng an toàn.</div>
+    </div>
+  </div>
+</section>
+
+<!-- KHỐI 7 - Cảm xúc / future pacing + CTA -->
+<section class="py-12 px-4 max-w-2xl mx-auto text-center">
+  <figure class="mb-6 max-w-xl mx-auto rounded-xl overflow-hidden shadow-sm border">
+    <img src="assets/ai-tuong-lai-thanh-thoi.jpg" alt="Minh hoạ chủ shop thảnh thơi gấp laptop lúc 6 giờ chiều, Fanpage vẫn tự chạy" class="w-full h-auto" loading="lazy">
+  </figure>
+  <p class="text-lg text-gray-700 leading-relaxed justify-text">Hình dung một buổi tối bạn đóng máy tính lúc 6 giờ, không phải mở lại điện thoại lúc 11 giờ đêm để trả lời comment. Page vẫn đăng bài đúng lịch. Khách vẫn được rep gần như ngay lập tức. Bạn giải phóng hàng giờ mỗi ngày để quay lại lo phần chỉ con người mới làm được: sản phẩm, khách lớn, chiến lược.</p>
+  <a href="#dangky" data-cta class="inline-block mt-6 bg-accent text-white px-8 py-4 rounded-xl font-bold">YES! TÔI MUỐN DỰNG BỘ MÁY NÀY</a>
+</section>
+
+<!-- KHỐI 8 - Rõ ràng + agenda hành trình (module bám 4 chương) -->
+<section class="py-12 px-4 bg-gray-50">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold mb-6 text-center">"Fanpage Tự Vận Hành" là gì?</h2>
+    <div class="grid md:grid-cols-2 gap-4 text-gray-700">
+      <div class="bg-white p-4 rounded-lg"><b>Là gì:</b> Khóa online 4 chương - 15 bài, dạy tự tay dựng hệ thống Make khiến Fanpage tự đăng bài + tự trả lời khách.</div>
+      <div class="bg-white p-4 rounded-lg"><b>Cho ai:</b> Chủ SME đội mỏng, trưởng phòng marketing tự lo 1-vài Fanpage một mình.</div>
+      <div class="bg-white p-4 rounded-lg"><b>Làm được gì:</b> Page tự đăng đều đúng giọng thương hiệu, tự rep khách 24/7, không cần ngồi trực.</div>
+      <div class="bg-white p-4 rounded-lg"><b>KHÔNG phải:</b> App đóng hộp thuê hàng tháng, không cam kết doanh số hay lượng đơn.</div>
+    </div>
+
+    <h3 class="text-xl font-bold mt-10 mb-4 text-center">Lộ trình đưa Fanpage của bạn tự chạy - 4 chương, 15 bài</h3>
+    <figure class="mb-6 rounded-xl overflow-hidden shadow-sm border">
+      <img src="assets/ai-lo-trinh-4-chuong.jpg" alt="Minh hoạ lộ trình 4 chặng: dựng máy, máy tự viết và đăng bài, máy trực khách, chạy bền và nhân bản" class="w-full h-auto" loading="lazy">
+    </figure>
+    <div class="space-y-4">
+      <div class="bg-white p-5 rounded-lg">
+        <p class="font-bold">Chương 1 - Dựng bộ máy tự động + cài giọng thương hiệu (4 bài)</p>
+        <p class="text-sm text-gray-600 mt-1">Kết quả: có sẵn hệ thống nối với Fanpage và một "hồ sơ giọng" khiến máy viết đúng chất riêng của bạn.</p>
+      </div>
+      <div class="bg-white p-5 rounded-lg">
+        <p class="font-bold">Chương 2 - Máy tự viết bài, tạo ảnh, đăng đúng lịch (4 bài)</p>
+        <p class="text-sm text-gray-600 mt-1">Kết quả: page đều bài mỗi tuần mà bạn không phải ngồi viết và đăng từng cái.</p>
+      </div>
+      <div class="bg-white p-5 rounded-lg">
+        <p class="font-bold">Chương 3 - Máy tự trực khách 24/7 (4 bài)</p>
+        <p class="text-sm text-gray-600 mt-1">Kết quả: khách được phản hồi nhanh mọi khung giờ, không còn comment bỏ quên.</p>
+      </div>
+      <div class="bg-white p-5 rounded-lg">
+        <p class="font-bold">Chương 4 - Chạy bền không bị Facebook khóa + nhân bản (3 bài)</p>
+        <p class="text-sm text-gray-600 mt-1">Kết quả: bộ máy chạy an toàn dài lâu, và bạn nhân được sang page hoặc khách khác.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KHỐI 9 - Tạo giá trị (neo giá / ROI) -->
+<section class="py-12 px-4 max-w-2xl mx-auto text-center">
+  <p class="text-lg text-gray-700 justify-text">Giá gốc niêm yết 2.400.000đ - mức ưu đãi mở bán sớm chỉ còn 868.000đ cho nhóm học đầu tiên.</p>
+  <p class="mt-3 text-lg text-gray-700 justify-text">So với thuê ngoài dựng hệ thống automation cho một Fanpage, hay trả phí hàng tháng cho app auto đóng hộp, đây là khoản đầu tư một lần để có bộ máy của chính bạn, không phụ thuộc ai.</p>
+</section>
+
+<!-- KHỐI 10 - FAQ (khớp nỗi đau) -->
+<section id="faq" class="py-12 px-4 max-w-3xl mx-auto">
+  <h2 class="text-2xl font-bold text-center mb-8">Câu hỏi thường gặp</h2>
+  <div class="space-y-3" id="faqwrap">
+    <div class="border rounded-lg"><button type="button" class="faqq w-full text-left p-4 font-semibold flex justify-between items-center">Tôi không rành kỹ thuật, học nổi không?<span class="faic text-xl">+</span></button><div class="faa hidden p-4 pt-0 text-gray-600">Khóa đi từ con số 0, có buổi Zoom cầm tay và bộ mẫu điền-là-chạy. Người chưa từng đụng kỹ thuật vẫn dựng được.</div></div>
+    <div class="border rounded-lg"><button type="button" class="faqq w-full text-left p-4 font-semibold flex justify-between items-center">Làm bằng tài khoản của tôi hay của bên khác?<span class="faic text-xl">+</span></button><div class="faa hidden p-4 pt-0 text-gray-600">Của chính bạn - bộ máy thuộc về bạn, không phụ thuộc ai, không mất khi ngừng trả phí bên thứ ba.</div></div>
+    <div class="border rounded-lg"><button type="button" class="faqq w-full text-left p-4 font-semibold flex justify-between items-center">Auto tương tác có bị Facebook khóa không?<span class="faic text-xl">+</span></button><div class="faa hidden p-4 pt-0 text-gray-600">Có hẳn một chương (Chương 4) dạy ngưỡng an toàn để auto tương tác không dính cờ spam, chạy bền lâu dài.</div></div>
+    <div class="border rounded-lg"><button type="button" class="faqq w-full text-left p-4 font-semibold flex justify-between items-center">Học một mình kẹt thì sao?<span class="faic text-xl">+</span></button><div class="faa hidden p-4 pt-0 text-gray-600">Có buổi Zoom cầm tay dựng máy trực tiếp cùng người hướng dẫn, và cộng đồng riêng để hỏi đáp khi bí.</div></div>
+  </div>
+</section>
+
+<!-- KHỐI 11 - Lý do mua (3 loại) -->
+<section class="py-12 px-4 bg-gray-50">
+  <div class="max-w-3xl mx-auto grid md:grid-cols-3 gap-4 text-center">
+    <div class="bg-white p-5 rounded-lg"><div class="font-bold mb-2">Về con số</div><p class="text-sm text-gray-600">868.000đ một lần, thay vì trả phí app hàng tháng mãi mãi hoặc thuê ngoài mỗi lần cần bài mới.</p></div>
+    <div class="bg-white p-5 rounded-lg"><div class="font-bold mb-2">Về cảm xúc</div><p class="text-sm text-gray-600">Thôi cảm giác page là "ông chủ" đòi bạn phục vụ mỗi tối - bạn chủ động điều khiển lại.</p></div>
+    <div class="bg-white p-5 rounded-lg"><div class="font-bold mb-2">Về chính bạn</div><p class="text-sm text-gray-600">Tự tay dựng ra một hệ thống thật, kỹ năng mang theo dùng được cho mọi page sau này.</p></div>
+  </div>
+</section>
+
+<!-- KHỐI 12 - Khan hiếm - countdown THẬT + % đăng ký -->
+<section class="py-12 px-4 text-center">
+  <h2 class="text-2xl font-bold mb-2">Ưu đãi mở bán sớm đóng sau</h2>
+  <p class="text-gray-600 mb-4">Lý do giới hạn: mức 868.000đ chỉ dành cho nhóm học đầu tiên khi khóa mới mở bán để test.</p>
+  <div id="cd" data-deadline="2026-07-03T23:59:00+07:00" class="flex justify-center gap-3 mb-6 font-mono">
+    <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-d>00</b><div class="text-xs">ngày</div></div>
+    <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-h>00</b><div class="text-xs">giờ</div></div>
+    <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-m>00</b><div class="text-xs">phút</div></div>
+    <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-s>00</b><div class="text-xs">giây</div></div>
+  </div>
+  <p class="text-xs text-gray-400 max-w-md mx-auto">Đồng hồ đếm tới mốc thật (2026-07-03T23:59:00+07:00 - anh Sơn điền giờ mở bán thật trước khi chạy ads). Hết hạn thì đổi mốc hoặc đóng ưu đãi thật, không gia hạn lén.</p>
+</section>
+
+<!-- KHỐI 13 - Value-stack (có dòng TỔNG) -->
+<section class="py-12 px-4">
+  <h2 class="text-2xl font-bold text-center mb-6">Bạn nhận được gì với 868.000đ hôm nay</h2>
+  <div class="max-w-2xl mx-auto border rounded-xl overflow-hidden shadow-sm">
+    <table class="w-full text-sm md:text-base"><tbody>
+      <tr class="border-b"><td class="p-3">Trọn khóa "Fanpage Tự Vận Hành" - 4 chương, 15 bài</td><td class="p-3 text-right font-semibold">1.800.000đ</td></tr>
+      <tr class="border-b"><td class="p-3">Bonus 1: Buổi Zoom cầm tay dựng máy</td><td class="p-3 text-right font-semibold">600.000đ</td></tr>
+      <tr class="border-b"><td class="p-3">Bonus 2: Bộ dây chuyền điền-là-chạy (7 việc)</td><td class="p-3 text-right font-semibold">500.000đ</td></tr>
+      <tr class="border-b"><td class="p-3">Bonus 3: Trợ lý cài giọng thương hiệu</td><td class="p-3 text-right font-semibold">300.000đ</td></tr>
+      <tr class="border-b"><td class="p-3">Bonus 4: Cộng đồng người cùng dựng máy</td><td class="p-3 text-right font-semibold">200.000đ</td></tr>
+      <tr class="border-b bg-gray-50"><td class="p-3 font-bold">TỔNG GIÁ TRỊ</td><td class="p-3 text-right font-bold">3.400.000đ</td></tr>
+      <tr class="bg-accent/10"><td class="p-3 font-bold">Hôm nay chỉ</td><td class="p-3 text-right"><span class="line-through text-gray-400">2.400.000đ</span> <b class="text-accent text-lg">868.000đ</b></td></tr>
+      <tr><td class="p-3 text-green-700 font-semibold">Bạn tiết kiệm</td><td class="p-3 text-right text-green-700 font-semibold">1.532.000đ (64%)</td></tr>
+    </tbody></table>
+  </div>
+  <p class="text-xs text-gray-400 text-center max-w-md mx-auto mt-3">Giá trị quy đổi từng mục ước theo mức phí thị trường tương đương cho dịch vụ tương tự - không phải giá niêm yết riêng lẻ đã bán.</p>
+  <div class="text-center mt-6"><a href="#dangky" data-cta class="inline-block bg-accent text-white px-8 py-4 rounded-xl font-bold">NHẬN TRỌN BỘ NGAY - CHỈ 868.000Đ</a></div>
+</section>
+
+<!-- KHỐI 14 - Bonus stack (chi tiết từng bonus giải micro-problem) -->
+<section class="py-12 px-4 bg-gray-50">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold text-center mb-6">Đăng ký hôm nay nhận thêm 4 quà tặng</h2>
+    <div class="space-y-3">
+      <div class="bg-white p-4 rounded-lg"><p><b>BONUS 1 - Buổi Zoom Cầm Tay Dựng Máy:</b> dựng bộ máy cùng lúc với người hướng dẫn, mắc ở đâu gỡ ngay ở đó. Giải nỗi lo "xem video một mình dễ tắc giữa chừng rồi bỏ".</p></div>
+      <div class="bg-white p-4 rounded-lg"><p><b>BONUS 2 - Bộ Dây Chuyền Điền-Là-Chạy:</b> scenarios mẫu sẵn cho cả 7 việc (viết bài, tạo ảnh, đăng bài, trả lời comment, nhắn tin, thả tim, chatbot). Giải nỗi lo "sợ dựng từ đầu sai bước".</p></div>
+      <div class="bg-white p-4 rounded-lg"><p><b>BONUS 3 - Trợ Lý Cài Giọng Thương Hiệu:</b> công cụ viết ra "hồ sơ giọng" để máy viết bài đúng chất riêng, không vô hồn kiểu robot.</p></div>
+      <div class="bg-white p-4 rounded-lg"><p><b>BONUS 4 - Cộng Đồng Người Cùng Dựng Máy:</b> nhóm riêng để hỏi đáp, cập nhật khi Facebook hoặc công cụ đổi. Giải nỗi lo "làm một mình, kẹt là kẹt luôn".</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- KHỐI 14b - Giảng viên -->
+<section class="py-12 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold text-center mb-8">Người đã dựng bộ máy này cho những thương hiệu thật</h2>
+    <div class="md:flex items-start gap-8">
+      <img src="assets/chan-dung-chuyen-nghiep.jpg" alt="Lê Thanh Sơn - chuyên gia và diễn giả đào tạo ứng dụng AI cho doanh nghiệp" class="w-48 h-48 rounded-full object-cover mx-auto md:mx-0 mb-6 md:mb-0 shrink-0">
+      <div>
+        <h3 class="text-xl font-bold">Lê Thanh Sơn</h3>
+        <p class="text-gray-600">Chuyên gia & diễn giả đào tạo ứng dụng AI cho doanh nghiệp</p>
+        <p class="mt-3 text-gray-700 justify-text">Khóa này không dạy lý thuyết chép trên mạng. Cách làm trong khóa là chính cách người hướng dẫn đã dùng để dựng hệ thống tự động cho các thương hiệu thật: một xưởng nội thất (Trường Hưng), một phòng nha (Xanh Dental), một shop rêu trang trí (Reu Decor), một phòng nha khác (Nha khoa Trung Hậu), một thương hiệu (Jaya). Mỗi nơi một ngành, một giọng khác nhau - và bộ máy đều thích ứng được. Điều bạn học không phải là "biết về" tự động hóa, mà là tự tay dựng ra thứ đang chạy thật ngoài đời.</p>
+        <p class="mt-3 text-sm text-gray-500">Website: lethanhson.net · Zalo: 0343928094</p>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 mt-8">
+      <figure class="rounded-lg overflow-hidden border">
+        <img src="assets/giang-bni-50congcu.jpg" alt="Lê Thanh Sơn đang giảng dạy tại buổi chia sẻ 50 công cụ AI" class="w-full h-64 object-cover">
+        <figcaption class="text-xs text-gray-500 p-2 text-center">Đang giảng dạy thực chiến</figcaption>
+      </figure>
+      <figure class="rounded-lg overflow-hidden border">
+        <img src="assets/lop-bni-toancanh.jpg" alt="Toàn cảnh lớp học ứng dụng AI do Lê Thanh Sơn hướng dẫn" class="w-full h-64 object-cover">
+        <figcaption class="text-xs text-gray-500 p-2 text-center">Workshop ứng dụng AI cho doanh nghiệp</figcaption>
+      </figure>
+    </div>
+    <figure class="rounded-lg overflow-hidden border mt-4">
+      <img src="assets/ai-dashboard-automation.jpg" alt="Minh hoạ sơ đồ một hệ thống tự động vận hành Fanpage" class="w-full h-64 object-cover" loading="lazy">
+      <figcaption class="text-xs text-gray-500 p-2 text-center">Minh hoạ sơ đồ một hệ thống tự động (hình minh hoạ)</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- KHỐI 15 - Testimonial -->
+<section class="py-12 px-4 bg-gray-50">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-center mb-8">Học viên nói gì</h2>
+    <div class="border rounded-lg p-6 text-center text-gray-500 bg-white">
+      <p>[CẦN BỔ SUNG: lời chứng học viên - khóa mới mở bán sớm để test, chưa có học viên. Sẽ thay bằng lời chứng thật (tên + ảnh + số) sau đợt học đầu tiên. Không bịa lời chứng.]</p>
+    </div>
+  </div>
+</section>
+
+<!-- KHỐI 16 - Trước/Sau + Bảng giá + Bảo hành + CTA + Form + QR -->
+<section class="py-12 px-4 bg-primary/5">
+  <div class="max-w-3xl mx-auto mb-12">
+    <h2 class="text-2xl font-bold text-center mb-6">Sự thay đổi bạn có thể kỳ vọng</h2>
+    <figure class="mb-6 rounded-xl overflow-hidden shadow-sm border">
+      <img src="assets/ai-truoc-sau.jpg" alt="Minh hoạ trước và sau: Fanpage bỏ bê so với Fanpage tự vận hành đều đặn" class="w-full h-auto" loading="lazy">
+    </figure>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-5 rounded-lg">
+        <p class="font-bold mb-3">Trước "Fanpage Tự Vận Hành"</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>Đăng bài phập phù, nhớ ra mới đăng.</li>
+          <li>Comment và inbox của khách để lâu mới trả lời.</li>
+          <li>Tối nào cũng ôm điện thoại canh page.</li>
+          <li>Thuê người thì tốn tiền, bài lại không đúng giọng.</li>
+        </ul>
+      </div>
+      <div class="bg-white p-5 rounded-lg border-2 border-accent">
+        <p class="font-bold mb-3 text-accent">Sau "Fanpage Tự Vận Hành"</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>Page đăng đều đặn đúng lịch, đúng giọng thương hiệu.</li>
+          <li>Khách được phản hồi nhanh gần như tức thì, kể cả ngoài giờ.</li>
+          <li>Bạn rảnh tay lo sản phẩm và khách lớn.</li>
+          <li>Bộ máy đặt trên tài khoản của bạn - không phụ thuộc ai.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-md mx-auto bg-white border-2 border-accent rounded-xl p-6 relative shadow-xl mb-10">
+    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs px-3 py-1 rounded-full font-bold">ƯU ĐÃI MỞ BÁN SỚM</span>
+    <h3 class="font-bold text-xl text-center">Fanpage Tự Vận Hành</h3>
+    <p class="my-3 text-center"><span class="line-through text-gray-400 text-lg">2.400.000đ</span> <span class="text-3xl font-extrabold text-accent">868.000đ</span></p>
+    <ul class="text-sm space-y-2 mb-6">
+      <li>✓ Trọn khóa 4 chương - 15 bài</li>
+      <li>✓ Buổi Zoom cầm tay dựng máy</li>
+      <li>✓ Bộ dây chuyền điền-là-chạy</li>
+      <li>✓ Trợ lý cài giọng thương hiệu</li>
+      <li>✓ Cộng đồng người cùng dựng máy</li>
+    </ul>
+    <a href="#dangky" data-cta class="block text-center bg-accent text-white rounded-lg py-3 font-bold">YES! GIỮ ƯU ĐÃI CHO TÔI</a>
+  </div>
+
+  <!-- Bảo hành CÓ ĐIỀU KIỆN -->
+  <div class="max-w-2xl mx-auto mt-10 p-6 border-2 border-dashed border-green-500 rounded-xl text-center bg-white">
+    <p class="text-lg font-bold">Hoàn tiền nếu khóa không như mô tả</p>
+    <p class="text-sm text-gray-600 mt-2">Áp dụng khi bạn đã học hết Chương 1-2 và thực hành theo đúng hướng dẫn mà không dựng được hệ thống cơ bản. Liên hệ Zalo 0343928094 để được hỗ trợ.</p>
+  </div>
+
+  <!-- Form thu lead -->
+  <form id="dangky" data-lead onsubmit="return leadDone(event)" class="max-w-md mx-auto mt-10 bg-white p-6 rounded-xl shadow space-y-3">
+    <h3 class="text-xl font-bold text-center">Giữ ưu đãi mở bán sớm 868.000đ cho Fanpage của bạn</h3>
+    <p class="text-sm text-gray-600 text-center">Nhận trọn 4 chương - 15 bài + 4 quà tặng. Thông tin của bạn được bảo mật.</p>
+    <input name="ten" required placeholder="Họ và tên" class="w-full border rounded-lg p-3">
+    <input name="sdt" required placeholder="Số điện thoại / Zalo" class="w-full border rounded-lg p-3">
+    <input name="email" type="email" placeholder="Email" class="w-full border rounded-lg p-3">
+    <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off">
+    <button class="w-full bg-accent text-white rounded-lg py-4 font-bold text-lg">YES! ĐĂNG KÝ GIỮ ƯU ĐÃI CHO TÔI</button>
+    <p class="text-xs text-center text-gray-500">Hoàn tiền nếu khóa không như mô tả · Cầm tay chỉ việc cho người chưa rành kỹ thuật</p>
+  </form>
+
+  <!-- Checkout QR -->
+  <div class="max-w-md mx-auto mt-10 bg-white p-6 rounded-xl shadow text-center">
+    <h3 class="text-lg font-bold mb-2">Quét mã để chuyển khoản 868.000đ</h3>
+    <p class="text-sm text-gray-500 mb-4">Đã đăng ký ở form trên? Chuyển khoản theo hướng dẫn dưới đây để nhận khóa ngay.</p>
+    <div class="mx-auto w-56">
+      <img src="https://img.vietqr.io/image/970437-072704070003907-compact2.png?amount=868000&addInfo=Fanpage%20Tu%20Van%20Hanh&accountName=LE%20THANH%20SON" alt="Mã QR chuyển khoản HD Bank 868.000đ - LE THANH SON" class="w-full rounded-lg border" loading="lazy">
+    </div>
+    <div class="mt-4 text-sm text-gray-700 space-y-1 text-left max-w-xs mx-auto">
+      <p><b>Ngân hàng:</b> HD Bank</p>
+      <p><b>Chủ tài khoản:</b> LE THANH SON</p>
+      <p><b>Số tài khoản:</b> 072704070003907</p>
+      <p><b>Số tiền:</b> 868.000đ</p>
+      <p><b>Nội dung CK:</b> FTVH [số điện thoại của bạn]</p>
+    </div>
+    <p class="text-xs text-gray-400 mt-3">Mở app ngân hàng → quét mã hoặc chuyển khoản thủ công theo thông tin trên → ghi đúng nội dung để được kích hoạt khóa nhanh nhất.</p>
+  </div>
+</section>
+
+<!-- Footer pháp lý -->
+<footer class="bg-gray-900 text-gray-300 py-10 px-4 text-center text-sm">
+  <p class="font-bold text-white">Lê Thanh Sơn - Chuyên gia & diễn giả đào tạo ứng dụng AI cho doanh nghiệp</p>
+  <p class="mt-1">Website: lethanhson.net · Zalo: 0343928094</p>
+  <p class="mt-3 text-gray-500 max-w-2xl mx-auto justify-text">Kết quả nêu trên không phải kết quả điển hình và phụ thuộc vào page, ngành hàng, mức độ thực hành của bạn. Khóa hướng dẫn cách tự dựng hệ thống để Fanpage tự vận hành phần việc lặp lại (đăng bài, phản hồi khách); khóa KHÔNG cam kết về doanh số, lượng đơn hay lượng người theo dõi. Việc tự động tương tác cần chạy trong ngưỡng an toàn của nền tảng. Trang này không thuộc và không được Facebook xác nhận. FACEBOOK là thương hiệu của Facebook, Inc.</p>
+  <p class="mt-4 text-gray-500">Chính sách bảo mật · Điều khoản & Điều kiện · &copy; 2026 Lê Thanh Sơn</p>
+</footer>
+
+<!-- Popup cảm ơn -->
+<div id="ok" class="hidden fixed inset-0 z-[70] bg-black/50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl p-8 text-center max-w-sm"><h3 class="text-2xl font-bold">Đã nhận đăng ký!</h3><p class="mt-2 text-gray-600">Cảm ơn bạn đã đăng ký "Fanpage Tự Vận Hành". Vui lòng chuyển khoản theo hướng dẫn QR bên dưới form để nhận khóa ngay.</p><button type="button" onclick="document.getElementById('ok').classList.add('hidden')" class="mt-5 bg-accent text-white px-6 py-2 rounded-lg">Đóng</button></div>
+</div>
+<!-- Popup thoát trang -->
+<div id="exitpop" class="hidden fixed inset-0 z-[70] bg-black/50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl p-8 text-center max-w-sm"><h3 class="text-xl font-bold">Khoan đã!</h3><p class="mt-2 text-gray-600">Ưu đãi mở bán sớm 868.000đ (thay vì 2.400.000đ) chỉ dành cho nhóm học đầu tiên. Giữ suất trước khi rời trang.</p><a href="#dangky" data-cta onclick="document.getElementById('exitpop').classList.add('hidden')" class="inline-block mt-5 bg-accent text-white px-6 py-3 rounded-lg font-bold">Giữ ưu đãi cho tôi</a></div>
+</div>
+
+<script>
+// thanh tiến trình đọc
+document.addEventListener('scroll',function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;document.getElementById('readbar').style.width=p+'%';});
+// countdown THẬT (đếm tới mốc, kẹp 0)
+(function(){var el=document.getElementById('cd');if(!el)return;var end=new Date(el.dataset.deadline).getTime();if(isNaN(end))return;
+function t(){var d=end-Date.now();if(d<0)d=0;var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4),S=Math.floor(d%6e4/1e3);
+el.querySelector('[data-d]').textContent=String(D).padStart(2,'0');el.querySelector('[data-h]').textContent=String(H).padStart(2,'0');
+el.querySelector('[data-m]').textContent=String(M).padStart(2,'0');el.querySelector('[data-s]').textContent=String(S).padStart(2,'0');}
+t();setInterval(t,1000);})();
+// FAQ accordion
+document.querySelectorAll('.faqq').forEach(function(b){b.addEventListener('click',function(){var c=b.nextElementSibling,i=b.querySelector('.faic');c.classList.toggle('hidden');i.textContent=c.classList.contains('hidden')?'+':'−';});});
+// form -> popup cảm ơn (chặn honeypot); gắn webhook Make ở chỗ ghi chú
+function leadDone(e){e.preventDefault();var f=e.target;if(f.company.value)return false;
+/* TODO: fetch(webhookMake,{method:'POST',body:JSON.stringify(...)}) - text/plain né CORS */
+try{if(window.fbq)fbq('track','Lead');}catch(_){}
+document.getElementById('ok').classList.remove('hidden');return false;}
+// popup thoát trang (1 lần): mouseout desktop + fallback timer mobile
+var shown=false;function exitPop(){if(shown)return;shown=true;document.getElementById('exitpop').classList.remove('hidden');}
+document.addEventListener('mouseout',function(e){if(e.clientY<=0)exitPop();});
+var _gd=parseInt(document.body.getAttribute('data-popup-delay'),10);setTimeout(exitPop,(isNaN(_gd)?45:_gd)*1000);
+// tự nối UTM vào CTA
+document.addEventListener('DOMContentLoaded',function(){var qs=window.location.search;if(!qs)return;
+document.querySelectorAll('a[data-cta]').forEach(function(a){if(a.getAttribute('href')&&a.getAttribute('href').indexOf('#')!==0){a.href+=(a.href.includes('?')?'&':'?')+qs.slice(1);}});});
+</script>
+</body>
+</html>
