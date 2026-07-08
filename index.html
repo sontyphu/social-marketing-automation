@@ -364,8 +364,19 @@ tailwind.config = { theme: { extend: {
 </div>
 
 <script>
-// lấy IP công khai của khách (chạy nền lúc tải trang, để kèm vào lead); lỗi thì bỏ qua
-try{fetch('https://api.ipify.org?format=json').then(function(r){return r.json();}).then(function(d){window.__ltsIP=(d&&d.ip)||'';}).catch(function(){});}catch(_){}
+// nền: lấy IP + vị trí (ipwho.is) + đánh dấu khách mới/quay lại - lỗi thì để trống, không chặn lead
+(function(){
+  try{var seen=localStorage.getItem('ftvh_visited');window.__ltsKhach=seen?'Quay lại':'Mới';localStorage.setItem('ftvh_visited','1');}catch(_){window.__ltsKhach='';}
+  try{fetch('https://ipwho.is/').then(function(r){return r.json();}).then(function(d){
+    if(!d||d.success===false)throw 0;
+    window.__ltsIP=d.ip||'';
+    var loc=[d.city,d.region].filter(Boolean).join(', ');
+    var isp=(d.connection&&d.connection.isp)?d.connection.isp:'';
+    window.__ltsViTri=loc+(isp?(' - '+isp):'');
+  }).catch(function(){
+    try{fetch('https://api.ipify.org?format=json').then(function(r){return r.json();}).then(function(d){window.__ltsIP=(d&&d.ip)||'';}).catch(function(){});}catch(_){}
+  });}catch(_){}
+})();
 // thanh tiến trình đọc
 document.addEventListener('scroll',function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;document.getElementById('readbar').style.width=p+'%';});
 // countdown evergreen: mỗi khách 1 mốc riêng 48h (luôn còn giờ); đổi số 48 nếu muốn khác
@@ -383,7 +394,22 @@ t();setInterval(t,1000);})();
 document.querySelectorAll('.faqq').forEach(function(b){b.addEventListener('click',function(){var c=b.nextElementSibling,i=b.querySelector('.faic');c.classList.toggle('hidden');i.textContent=c.classList.contains('hidden')?'+':'−';});});
 // form -> lưu thông tin khách + gửi webhook Make + chuyển sang trang thanh toán
 function leadDone(e){e.preventDefault();var f=e.target;if(f.company&&f.company.value)return false;
-var order={hoten:(f.ten?f.ten.value.trim():''),sdt:(f.sdt?f.sdt.value.trim():''),email:(f.email?f.email.value.trim():''),nguon:location.href,san_pham:'Fanpage Tự Vận Hành',ip:(window.__ltsIP||'')};
+var ua=navigator.userAgent||'';
+var thiet_bi=(/iPad|Tablet|PlayBook|Silk/i.test(ua)||(/Android/i.test(ua)&&!/Mobile/i.test(ua)))?'Máy tính bảng':((/Mobi|iPhone|Android.*Mobile|Windows Phone/i.test(ua))?'Điện thoại':'Máy tính');
+var he_dh=/Windows NT/i.test(ua)?'Windows':(/Android/i.test(ua)?'Android':((/iPhone|iPad|iPod/i.test(ua))?'iOS':(/Mac OS X/i.test(ua)?'macOS':(/Linux/i.test(ua)?'Linux':'Khác'))));
+var order={
+thoi_diem_dang_ky:new Date().toLocaleString('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',hour12:false}),
+hoten:(f.ten?f.ten.value.trim():''),
+sdt:(f.sdt?f.sdt.value.trim():''),
+email:(f.email?f.email.value.trim():''),
+nguon:location.href,
+referrer:(document.referrer||'Truy cập trực tiếp'),
+loai_thiet_bi:thiet_bi,
+he_dieu_hanh:he_dh,
+ip:(window.__ltsIP||''),
+vi_tri:(window.__ltsViTri||''),
+khach:(window.__ltsKhach||'')
+};
 try{sessionStorage.setItem('ftvh_order',JSON.stringify(order));}catch(_){}
 try{if(window.fbq)fbq('track','Lead');}catch(_){}
 var WEBHOOK_URL="https://hook.eu2.make.com/4nwbpefb3dhg5fri8d6lojfbc4o5opua";
