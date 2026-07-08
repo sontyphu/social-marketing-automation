@@ -344,22 +344,8 @@ tailwind.config = { theme: { extend: {
     <p class="text-xs text-center text-gray-500">Hoàn tiền nếu khóa không như mô tả · Cầm tay chỉ việc cho người chưa rành kỹ thuật</p>
   </form>
 
-  <!-- Checkout QR -->
-  <div class="max-w-md mx-auto mt-10 bg-white p-6 rounded-xl shadow text-center">
-    <h3 class="text-lg font-bold mb-2">Quét mã để chuyển khoản 868.000đ</h3>
-    <p class="text-sm text-gray-500 mb-4">Đã đăng ký ở form trên? Chuyển khoản theo hướng dẫn dưới đây để nhận khóa ngay.</p>
-    <div class="mx-auto w-56">
-      <img src="https://img.vietqr.io/image/970437-072704070003907-compact2.png?amount=868000&addInfo=Fanpage%20Tu%20Van%20Hanh&accountName=LE%20THANH%20SON" alt="Mã QR chuyển khoản HD Bank 868.000đ - LE THANH SON" class="w-full rounded-lg border" loading="lazy">
-    </div>
-    <div class="mt-4 text-sm text-gray-700 space-y-1 text-left max-w-xs mx-auto">
-      <p><b>Ngân hàng:</b> HD Bank</p>
-      <p><b>Chủ tài khoản:</b> LE THANH SON</p>
-      <p><b>Số tài khoản:</b> 072704070003907</p>
-      <p><b>Số tiền:</b> 868.000đ</p>
-      <p><b>Nội dung CK:</b> FTVH [số điện thoại của bạn]</p>
-    </div>
-    <p class="text-xs text-gray-400 mt-3">Mở app ngân hàng → quét mã hoặc chuyển khoản thủ công theo thông tin trên → ghi đúng nội dung để được kích hoạt khóa nhanh nhất.</p>
-  </div>
+  <!-- Thanh toán đã dời sang trang riêng thanh-toan.html: bấm nút đăng ký ở form trên là tự nhảy sang -->
+  <p class="max-w-md mx-auto mt-6 text-center text-sm text-gray-500">Sau khi bấm đăng ký, bạn được chuyển sang trang thanh toán có mã QR để giữ chỗ ngay.</p>
 </section>
 
 <!-- Footer pháp lý -->
@@ -370,10 +356,7 @@ tailwind.config = { theme: { extend: {
   <p class="mt-4 text-gray-500">Chính sách bảo mật · Điều khoản & Điều kiện · &copy; 2026 Lê Thanh Sơn</p>
 </footer>
 
-<!-- Popup cảm ơn -->
-<div id="ok" class="hidden fixed inset-0 z-[70] bg-black/50 flex items-center justify-center p-4">
-  <div class="bg-white rounded-xl p-8 text-center max-w-sm"><h3 class="text-2xl font-bold">Đã nhận đăng ký!</h3><p class="mt-2 text-gray-600">Cảm ơn bạn đã đăng ký "Fanpage Tự Vận Hành". Vui lòng chuyển khoản theo hướng dẫn QR bên dưới form để nhận khóa ngay.</p><button type="button" onclick="document.getElementById('ok').classList.add('hidden')" class="mt-5 bg-accent text-white px-6 py-2 rounded-lg">Đóng</button></div>
-</div>
+<!-- (popup cảm ơn đã bỏ - form chuyển thẳng sang thanh-toan.html) -->
 <!-- Popup thoát trang -->
 <div id="exitpop" class="hidden fixed inset-0 z-[70] bg-black/50 flex items-center justify-center p-4">
   <div class="bg-white rounded-xl p-8 text-center max-w-sm"><h3 class="text-xl font-bold">Khoan đã!</h3><p class="mt-2 text-gray-600">Ưu đãi mở bán sớm 868.000đ (thay vì 2.400.000đ) chỉ dành cho nhóm học đầu tiên. Giữ suất trước khi rời trang.</p><a href="#dangky" data-cta onclick="document.getElementById('exitpop').classList.add('hidden')" class="inline-block mt-5 bg-accent text-white px-6 py-3 rounded-lg font-bold">Giữ ưu đãi cho tôi</a></div>
@@ -390,11 +373,14 @@ el.querySelector('[data-m]').textContent=String(M).padStart(2,'0');el.querySelec
 t();setInterval(t,1000);})();
 // FAQ accordion
 document.querySelectorAll('.faqq').forEach(function(b){b.addEventListener('click',function(){var c=b.nextElementSibling,i=b.querySelector('.faic');c.classList.toggle('hidden');i.textContent=c.classList.contains('hidden')?'+':'−';});});
-// form -> popup cảm ơn (chặn honeypot); gắn webhook Make ở chỗ ghi chú
-function leadDone(e){e.preventDefault();var f=e.target;if(f.company.value)return false;
-/* TODO: fetch(webhookMake,{method:'POST',body:JSON.stringify(...)}) - text/plain né CORS */
+// form -> lưu thông tin khách + gửi webhook Make + chuyển sang trang thanh toán
+function leadDone(e){e.preventDefault();var f=e.target;if(f.company&&f.company.value)return false;
+var order={hoten:(f.ten?f.ten.value.trim():''),sdt:(f.sdt?f.sdt.value.trim():''),email:(f.email?f.email.value.trim():''),nguon:location.href};
+try{sessionStorage.setItem('ftvh_order',JSON.stringify(order));}catch(_){}
 try{if(window.fbq)fbq('track','Lead');}catch(_){}
-document.getElementById('ok').classList.remove('hidden');return false;}
+var WEBHOOK_URL="";/* TODO: dán webhook Make khóa Fanpage Tự Vận Hành (scenario riêng) để lead chảy về Sheet */
+try{if(WEBHOOK_URL)fetch(WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(order)});}catch(_){}
+window.location.href='thanh-toan.html';return false;}
 // popup thoát trang (1 lần): mouseout desktop + fallback timer mobile
 var shown=false;function exitPop(){if(shown)return;shown=true;document.getElementById('exitpop').classList.remove('hidden');}
 document.addEventListener('mouseout',function(e){if(e.clientY<=0)exitPop();});

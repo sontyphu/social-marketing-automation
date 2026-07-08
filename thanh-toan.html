@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Hoàn tất thanh toán | Fanpage Tự Vận Hành</title>
+
+<!-- ĐO LƯỜNG - điền {{FB_PIXEL_ID}} thật trước khi chạy ads (giống trang bán) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+try{ if('{{FB_PIXEL_ID}}'.indexOf('{{')<0){ fbq('init','{{FB_PIXEL_ID}}'); fbq('track','PageView'); } }catch(e){}
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { primary: '#1d4ed8', accent: '#ea580c' },
+  fontFamily: { sans: ['"Be Vietnam Pro"','sans-serif'] }
+}}}
+</script>
+<style>
+  body{font-family:"Be Vietnam Pro",sans-serif; overflow-x:hidden}
+  img{max-width:100%;height:auto}
+</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Thanh xác nhận quyết định -->
+<header class="bg-gradient-to-br from-primary to-blue-900 text-white text-center py-6 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex flex-wrap justify-center items-center gap-2 text-sm font-semibold text-blue-200 mb-3">
+      <span class="text-green-300">✓ Đã đăng ký</span>
+      <span class="opacity-60">→</span>
+      <span class="text-white">Thanh toán giữ chỗ</span>
+      <span class="opacity-60">→</span>
+      <span>Vào học</span>
+    </div>
+    <h1 id="hello" class="text-2xl md:text-3xl font-extrabold max-w-xl mx-auto">Còn một bước nữa là xong!</h1>
+    <p class="text-blue-100 max-w-lg mx-auto mt-2">Quét mã QR bên dưới để hoàn tất giữ chỗ khóa <b id="pName2">Fanpage Tự Vận Hành</b>. Chuyển khoản xong, chỗ của bạn được xác nhận và mình liên hệ Zalo để gửi lịch học.</p>
+  </div>
+</header>
+
+<div class="max-w-5xl mx-auto px-4">
+  <div class="flex flex-col-reverse md:flex-row-reverse gap-6 items-start py-8">
+
+    <!-- CỘT THANH TOÁN (mobile: lên trên) -->
+    <aside class="w-full md:flex-1 md:max-w-md md:sticky md:top-4">
+      <div class="bg-white border-2 border-primary rounded-2xl shadow-xl p-6 text-center">
+        <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-blue-50 px-3 py-1 rounded-full mb-3">Quét để thanh toán</span>
+        <h2 class="text-xl font-bold mb-1">Chuyển khoản bằng mã QR</h2>
+        <p class="text-sm text-gray-500 mb-4">Mở app ngân hàng → bấm <b>Quét QR</b> → kiểm tra đúng tên <b>LE THANH SON</b> rồi xác nhận.</p>
+
+        <img id="qrImg" src="assets/qr-chuyen-khoan.png" alt="Mã QR chuyển khoản HD Bank - LE THANH SON" class="w-56 mx-auto rounded-xl border p-2 bg-white">
+
+        <div class="grid gap-2 text-left mt-4">
+          <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+            <span class="text-xs text-gray-500 font-semibold">Ngân hàng</span>
+            <span class="font-bold" id="vBank">HD Bank</span>
+          </div>
+          <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+            <span class="text-xs text-gray-500 font-semibold">Số tài khoản</span>
+            <span class="font-bold" id="vAcc">072704070003907</span>
+            <button class="copy text-xs font-bold text-primary bg-blue-50 px-2 py-1 rounded" data-copy="vAcc">Sao chép</button>
+          </div>
+          <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+            <span class="text-xs text-gray-500 font-semibold">Chủ tài khoản</span>
+            <span class="font-bold" id="vHolder">LE THANH SON</span>
+          </div>
+          <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+            <span class="text-xs text-gray-500 font-semibold">Số tiền</span>
+            <span class="font-extrabold text-accent text-lg" id="vAmount">868.000đ</span>
+            <button class="copy text-xs font-bold text-primary bg-blue-50 px-2 py-1 rounded" data-copy="vAmountRaw">Sao chép</button>
+          </div>
+          <div class="flex justify-between items-center gap-2 bg-amber-50 border border-amber-300 rounded-lg px-3 py-2">
+            <span class="text-xs text-amber-700 font-semibold">Nội dung CK</span>
+            <span class="font-bold text-amber-900" id="vNote">FTVH [SĐT của bạn]</span>
+            <button class="copy text-xs font-bold text-primary bg-blue-50 px-2 py-1 rounded" data-copy="vNote">Sao chép</button>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-500 mt-3">⚠️ Giữ <b>đúng nội dung chuyển khoản</b> để chỗ của bạn được xác nhận nhanh.</p>
+
+        <button id="paidBtn" class="w-full bg-green-600 text-white rounded-xl py-4 font-bold mt-4 hover:opacity-90 transition">Tôi đã chuyển khoản ✓</button>
+
+        <div id="paidBox" class="hidden text-center bg-green-50 border border-green-300 rounded-xl p-4 mt-3">
+          <h3 class="font-bold text-green-700">Đã ghi nhận, cảm ơn bạn!</h3>
+          <p class="text-sm text-green-800 mt-1" id="paidMsg"></p>
+          <a id="zaloBtn" href="https://zalo.me/0343928094" target="_blank" rel="noopener" class="inline-block w-full bg-white text-primary border-2 border-primary rounded-xl py-3 font-bold mt-3">Nhắn Zalo gửi ảnh chuyển khoản</a>
+        </div>
+
+        <div class="flex flex-wrap gap-2 justify-center mt-4 text-xs text-gray-500 font-semibold">
+          <span>🔒 Chuyển khoản trực tiếp, an toàn</span>
+          <span>✓ Không phí ẩn</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CỘT THÔNG TIN ĐƠN -->
+    <main class="w-full md:flex-1">
+      <!-- Tóm tắt đơn -->
+      <div class="bg-white border rounded-2xl shadow-sm p-6 mb-4">
+        <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-blue-50 px-3 py-1 rounded-full mb-3">Đơn hàng của bạn</span>
+        <div class="flex justify-between items-baseline gap-3">
+          <span class="font-bold" id="pName">Khóa Fanpage Tự Vận Hành - 4 chương, 15 bài</span>
+          <span class="line-through text-gray-400 text-sm" id="pOld">2.400.000đ</span>
+        </div>
+        <div class="flex justify-between items-center mt-3 pt-3 border-t-2">
+          <span class="font-bold">Tổng thanh toán</span>
+          <span class="font-extrabold text-2xl text-primary" id="vTotal">868.000đ</span>
+        </div>
+        <div class="text-center mt-3"><span class="inline-block bg-green-100 text-green-700 font-bold text-xs px-3 py-1 rounded-full" id="saveTxt"></span></div>
+      </div>
+
+      <!-- Bạn nhận được -->
+      <div class="bg-white border rounded-2xl shadow-sm p-6 mb-4">
+        <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-blue-50 px-3 py-1 rounded-full mb-3">Bạn nhận được</span>
+        <ul class="grid gap-2 text-sm">
+          <li class="flex gap-2"><span class="text-green-600 font-bold">✓</span> <span><b>Trọn khóa 4 chương - 15 bài</b> cầm tay chỉ việc: dựng bộ máy tự đăng bài + tự trả lời khách 24/7.</span></li>
+          <li class="flex gap-2"><span class="text-green-600 font-bold">✓</span> <span><b>Buổi Zoom cầm tay dựng máy</b> - mắc đâu gỡ đó cùng người hướng dẫn.</span></li>
+          <li class="flex gap-2"><span class="text-green-600 font-bold">✓</span> <span><b>Bộ dây chuyền điền-là-chạy</b> cho cả 7 việc + <b>Trợ lý cài giọng thương hiệu</b>.</span></li>
+          <li class="flex gap-2"><span class="text-green-600 font-bold">✓</span> <span><b>Cộng đồng người cùng dựng máy</b> để hỏi đáp khi vướng.</span></li>
+        </ul>
+      </div>
+
+      <!-- Khan hiếm -->
+      <div class="bg-amber-50 border border-amber-300 rounded-2xl p-5 mb-4 flex gap-3 items-center">
+        <span class="text-2xl">⏳</span>
+        <p class="text-sm text-amber-900"><b>Ưu đãi mở bán sớm 868.000đ (thay vì 2.400.000đ)</b> chỉ dành cho nhóm học đầu tiên. Hoàn tất chuyển khoản để chốt mức giá này.</p>
+      </div>
+
+      <!-- Yên tâm -->
+      <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5 mb-4 flex gap-3 items-start">
+        <span class="text-2xl">🛡️</span>
+        <div>
+          <h3 class="font-bold">Học cầm tay, có hỗ trợ</h3>
+          <p class="text-sm text-gray-600 mt-1">Buổi học hướng dẫn từng bước, làm tới đâu chắc tới đó, có cộng đồng hỏi đáp khi vướng. Chuyển khoản trực tiếp vào tài khoản chính chủ <b>LE THANH SON</b>, không qua trung gian.</p>
+        </div>
+      </div>
+
+      <!-- Xử lý phân vân -->
+      <div class="bg-white border rounded-2xl shadow-sm p-6">
+        <h3 class="font-bold mb-3">Còn băn khoăn gì không?</h3>
+        <div class="grid gap-2">
+          <div class="bg-gray-50 border rounded-xl px-4 py-3">
+            <div class="font-semibold text-sm">"Chuyển khoản rồi mà chưa thấy xác nhận?"</div>
+            <div class="text-sm text-gray-600">Bạn giữ ảnh chuyển khoản; mình đối soát rồi liên hệ Zalo xác nhận. Cần gấp nhắn Zalo 0343928094.</div>
+          </div>
+          <div class="bg-gray-50 border rounded-xl px-4 py-3">
+            <div class="font-semibold text-sm">"Mình mù công nghệ, theo kịp không?"</div>
+            <div class="text-sm text-gray-600">Được. Khóa đi từ số 0, có buổi Zoom cầm tay và bộ mẫu điền-là-chạy.</div>
+          </div>
+          <div class="bg-gray-50 border rounded-xl px-4 py-3">
+            <div class="font-semibold text-sm">"Học online hay tới lớp?"</div>
+            <div class="text-sm text-gray-600">Học online, có buổi Zoom trực tiếp, ngồi đâu cũng học được.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer class="text-center text-sm text-gray-400 py-8 px-4">
+  <p><b class="text-gray-600">Fanpage Tự Vận Hành</b> · Lê Thanh Sơn</p>
+  <p class="mt-1">Cần hỗ trợ thanh toán? Nhắn Zalo 0343928094.</p>
+</footer>
+
+<script>
+// ==== CẤU HÌNH - chỉ cần sửa trong khối này ====
+var PAY = { bankBin:"970437", bankName:"HD Bank", account:"072704070003907", holder:"LE THANH SON", amount:"868000" };
+var PRODUCT   = "Khóa Fanpage Tự Vận Hành - 4 chương, 15 bài";
+var PRICE_OLD = "2400000";
+var ZALO      = "0343928094";
+var MA_DON    = "FTVH"; // nội dung CK = FTVH + số điện thoại
+// ================================================
+
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0,0);
+function vnd(n){ return Number(n).toLocaleString('vi-VN'); }
+function setText(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
+
+// đọc thông tin khách từ trang đăng ký
+var order={}; try{ order=JSON.parse(sessionStorage.getItem('ftvh_order')||'{}'); }catch(e){}
+var phone=(order.sdt||'').replace(/\D/g,'');
+if(order.hoten){ var ten=order.hoten.trim().split(/\s+/).pop(); setText('hello','Cảm ơn '+ten+', còn một bước nữa là xong!'); }
+
+setText('pName',PRODUCT); setText('pName2','Fanpage Tự Vận Hành');
+var noiDung = phone ? (MA_DON+' '+phone) : 'FTVH [SĐT của bạn]';
+setText('vNote',noiDung);
+setText('vBank',PAY.bankName); setText('vAcc',PAY.account); setText('vHolder',PAY.holder);
+
+var amountNum=(PAY.amount||'').replace(/\D/g,'');
+if(amountNum){ setText('vAmount',vnd(amountNum)+'đ'); setText('vTotal',vnd(amountNum)+'đ'); }
+var oldNum=(PRICE_OLD||'').replace(/\D/g,'');
+if(oldNum){ setText('pOld',vnd(oldNum)+'đ');
+  if(amountNum && Number(oldNum)>Number(amountNum)){
+    var diff=Number(oldNum)-Number(amountNum), pct=Math.round(diff/Number(oldNum)*100);
+    setText('saveTxt','Tiết kiệm '+vnd(diff)+'đ (~'+pct+'%)');
+  }
+}
+// ô ẩn: số tiền thuần cho nút sao chép
+var raw=document.createElement('span'); raw.id='vAmountRaw'; raw.style.display='none'; raw.textContent=amountNum||''; document.body.appendChild(raw);
+
+// QR động VietQR (nội dung = FTVH + SĐT); lỗi -> rơi về ảnh tĩnh assets/qr-chuyen-khoan.png
+if(PAY.bankBin && PAY.account){
+  var url='https://img.vietqr.io/image/'+PAY.bankBin+'-'+PAY.account+'-compact2.png?accountName='+encodeURIComponent(PAY.holder);
+  if(amountNum) url+='&amount='+amountNum;
+  url+='&addInfo='+encodeURIComponent(phone?noiDung:'Fanpage Tu Van Hanh');
+  var qr=document.getElementById('qrImg');
+  qr.setAttribute('onerror',"this.onerror=null;this.src='assets/qr-chuyen-khoan.png';");
+  qr.src=url;
+}
+
+// nút sao chép (có dự phòng cho trình duyệt trong app Zalo/Facebook chặn clipboard)
+function flashCopied(btn){ if(btn.dataset.ok)return; var old=btn.textContent; btn.dataset.ok=1; btn.textContent='Đã chép ✓';
+  setTimeout(function(){ btn.textContent=old; delete btn.dataset.ok; },1500); }
+function legacyCopy(t){ try{ var ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly','');
+  ta.style.position='absolute'; ta.style.left='-9999px'; document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0,t.length);
+  var ok=document.execCommand('copy'); document.body.removeChild(ta); return ok; }catch(e){ return false; } }
+document.querySelectorAll('.copy').forEach(function(btn){ btn.addEventListener('click',function(){
+  var el=document.getElementById(btn.getAttribute('data-copy')); var t=(el?el.textContent:'').trim(); if(!t)return;
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(function(){flashCopied(btn);}).catch(function(){ if(legacyCopy(t))flashCopied(btn); }); }
+  else if(legacyCopy(t)){ flashCopied(btn); }
+}); });
+
+// nút "Tôi đã chuyển khoản"
+document.getElementById('zaloBtn').href='https://zalo.me/'+ZALO;
+document.getElementById('paidMsg').innerHTML='Mình sẽ kiểm tra và liên hệ Zalo xác nhận trong vài giờ làm việc. Bạn nhớ <b>giữ lại ảnh chuyển khoản</b> nhé.';
+document.getElementById('paidBtn').addEventListener('click',function(){
+  this.style.display='none';
+  var box=document.getElementById('paidBox'); box.classList.remove('hidden'); box.scrollIntoView({behavior:'smooth',block:'center'});
+  try{ if(window.fbq) fbq('track','Purchase',{value:868000,currency:'VND',content_name:'Fanpage Tu Van Hanh'}); }catch(_){}
+});
+</script>
+</body>
+</html>
