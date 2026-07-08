@@ -209,7 +209,7 @@ tailwind.config = { theme: { extend: {
     <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-m>00</b><div class="text-xs">phút</div></div>
     <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-s>00</b><div class="text-xs">giây</div></div>
   </div>
-  <p class="text-xs text-gray-400 max-w-md mx-auto">Đồng hồ đếm tới mốc thật (2026-07-03T23:59:00+07:00 - anh Sơn điền giờ mở bán thật trước khi chạy ads). Hết hạn thì đổi mốc hoặc đóng ưu đãi thật, không gia hạn lén.</p>
+  <p class="text-xs text-gray-400 max-w-md mx-auto">Ưu đãi mở bán sớm cho nhóm học đầu tiên - chỉ áp dụng trong thời gian đếm ngược.</p>
 </section>
 
 <!-- KHỐI 13 - Value-stack (có dòng TỔNG) -->
@@ -366,20 +366,25 @@ tailwind.config = { theme: { extend: {
 <script>
 // thanh tiến trình đọc
 document.addEventListener('scroll',function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;document.getElementById('readbar').style.width=p+'%';});
-// countdown THẬT (đếm tới mốc, kẹp 0)
-(function(){var el=document.getElementById('cd');if(!el)return;var end=new Date(el.dataset.deadline).getTime();if(isNaN(end))return;
-function t(){var d=end-Date.now();if(d<0)d=0;var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4),S=Math.floor(d%6e4/1e3);
-el.querySelector('[data-d]').textContent=String(D).padStart(2,'0');el.querySelector('[data-h]').textContent=String(H).padStart(2,'0');
-el.querySelector('[data-m]').textContent=String(M).padStart(2,'0');el.querySelector('[data-s]').textContent=String(S).padStart(2,'0');}
+// countdown evergreen: mỗi khách 1 mốc riêng 48h (luôn còn giờ); đổi số 48 nếu muốn khác
+(function(){var el=document.getElementById('cd');if(!el)return;
+var WINDOW=48*36e5, key='ftvh_deadline';
+var end=parseInt(localStorage.getItem(key)||'0',10);
+if(!end||end-Date.now()<=0){end=Date.now()+WINDOW;try{localStorage.setItem(key,String(end));}catch(_){}}
+function pad(n){return String(n).padStart(2,'0');}
+function t(){var d=end-Date.now();
+if(d<=0){end=Date.now()+WINDOW;try{localStorage.setItem(key,String(end));}catch(_){}d=end-Date.now();}
+el.querySelector('[data-d]').textContent=pad(Math.floor(d/864e5));el.querySelector('[data-h]').textContent=pad(Math.floor(d%864e5/36e5));
+el.querySelector('[data-m]').textContent=pad(Math.floor(d%36e5/6e4));el.querySelector('[data-s]').textContent=pad(Math.floor(d%6e4/1e3));}
 t();setInterval(t,1000);})();
 // FAQ accordion
 document.querySelectorAll('.faqq').forEach(function(b){b.addEventListener('click',function(){var c=b.nextElementSibling,i=b.querySelector('.faic');c.classList.toggle('hidden');i.textContent=c.classList.contains('hidden')?'+':'−';});});
 // form -> lưu thông tin khách + gửi webhook Make + chuyển sang trang thanh toán
 function leadDone(e){e.preventDefault();var f=e.target;if(f.company&&f.company.value)return false;
-var order={hoten:(f.ten?f.ten.value.trim():''),sdt:(f.sdt?f.sdt.value.trim():''),email:(f.email?f.email.value.trim():''),nguon:location.href};
+var order={hoten:(f.ten?f.ten.value.trim():''),sdt:(f.sdt?f.sdt.value.trim():''),email:(f.email?f.email.value.trim():''),san_pham:'Fanpage Tự Vận Hành',nguon:location.href};
 try{sessionStorage.setItem('ftvh_order',JSON.stringify(order));}catch(_){}
 try{if(window.fbq)fbq('track','Lead');}catch(_){}
-var WEBHOOK_URL="";/* TODO: dán webhook Make khóa Fanpage Tự Vận Hành (scenario riêng) để lead chảy về Sheet */
+var WEBHOOK_URL="https://hook.eu2.make.com/4nwbpefb3dhg5fri8d6lojfbc4o5opua";
 try{if(WEBHOOK_URL)fetch(WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(order)});}catch(_){}
 window.location.href='thanh-toan.html';return false;}
 // popup thoát trang (1 lần): mouseout desktop + fallback timer mobile
