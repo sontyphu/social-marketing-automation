@@ -38,7 +38,7 @@ tailwind.config = { theme: { extend: {
   .justify-text{text-align:justify}
 </style>
 </head>
-<body class="bg-white text-gray-900" data-popup-delay="45">
+<body class="bg-white text-gray-900">
 
 <!-- thanh tiến trình đọc -->
 <div id="readbar"></div>
@@ -381,11 +381,7 @@ tailwind.config = { theme: { extend: {
   <p class="mt-4 text-gray-500">Chính sách bảo mật · Điều khoản & Điều kiện · &copy; 2026 Lê Thanh Sơn</p>
 </footer>
 
-<!-- (popup cảm ơn đã bỏ - form chuyển thẳng sang thanh-toan.html) -->
-<!-- Popup thoát trang -->
-<div id="exitpop" class="hidden fixed inset-0 z-[70] bg-black/50 flex items-center justify-center p-4">
-  <div class="bg-white rounded-xl p-8 text-center max-w-sm"><h3 class="text-xl font-bold">Khoan đã!</h3><p class="mt-2 text-gray-600">Ưu đãi mở bán sớm 868.000đ (thay vì 2.400.000đ) chỉ dành cho nhóm học đầu tiên. Giữ suất trước khi rời trang.</p><a href="#dangky" data-cta onclick="document.getElementById('exitpop').classList.add('hidden')" class="inline-block mt-5 bg-accent text-white px-6 py-3 rounded-lg font-bold">Giữ ưu đãi cho tôi</a></div>
-</div>
+<!-- (popup cảm ơn đã bỏ - form chuyển thẳng sang thanh-toan.html; popup thoát trang đã bỏ 11/07) -->
 
 <script>
 // nền: lấy IP + vị trí (ipwho.is) + đánh dấu khách mới/quay lại - lỗi thì để trống, không chặn lead
@@ -437,10 +433,6 @@ try{if(window.fbq)fbq('track','Lead');}catch(_){}
 var WEBHOOK_URL="https://hook.eu2.make.com/4nwbpefb3dhg5fri8d6lojfbc4o5opua";
 try{if(WEBHOOK_URL)fetch(WEBHOOK_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(order)});}catch(_){}
 window.location.href='thanh-toan.html';return false;}
-// popup thoát trang (1 lần): mouseout desktop + fallback timer mobile
-var shown=false;function exitPop(){if(shown)return;shown=true;document.getElementById('exitpop').classList.remove('hidden');}
-document.addEventListener('mouseout',function(e){if(e.clientY<=0)exitPop();});
-var _gd=parseInt(document.body.getAttribute('data-popup-delay'),10);setTimeout(exitPop,(isNaN(_gd)?45:_gd)*1000);
 // tự nối UTM vào CTA
 document.addEventListener('DOMContentLoaded',function(){var qs=window.location.search;if(!qs)return;
 document.querySelectorAll('a[data-cta]').forEach(function(a){if(a.getAttribute('href')&&a.getAttribute('href').indexOf('#')!==0){a.href+=(a.href.includes('?')?'&':'?')+qs.slice(1);}});});
