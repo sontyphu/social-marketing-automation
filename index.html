@@ -62,8 +62,14 @@ tailwind.config = { theme: { extend: {
       <span><b class="text-gray-900">15</b> bài cầm tay chỉ việc</span>
       <span><b class="text-gray-900">4</b> quà tặng đi kèm</span>
     </div>
-    <div class="mt-8 max-w-2xl mx-auto rounded-xl overflow-hidden shadow-lg border">
-      <img src="assets/ai-hero-tu-van-hanh.jpg" alt="Ảnh chụp màn hình hệ thống Make thật đang chạy: dây chuyền AI tự viết bài rồi đăng lên Fanpage" class="w-full h-auto" loading="eager">
+    <div class="mt-8 max-w-2xl mx-auto rounded-xl overflow-hidden shadow-lg border bg-black">
+      <video controls preload="metadata" poster="assets/video-gioi-thieu-poster.jpg" class="w-full h-auto" aria-label="Video giới thiệu: hệ thống Make thật đang tự viết bài, tạo ảnh, đăng Fanpage">
+        <source src="assets/video-gioi-thieu.mp4" type="video/mp4">
+      </video>
+    </div>
+    <a href="#dangky" data-cta class="inline-block mt-5 bg-accent text-white px-8 py-4 rounded-xl font-bold">XEM XONG LÀ MUỐN CÓ? DỰNG BỘ MÁY CỦA BẠN NGAY</a>
+    <div class="mt-6 max-w-2xl mx-auto rounded-xl overflow-hidden shadow-lg border">
+      <img src="assets/ai-hero-tu-van-hanh.jpg" alt="Ảnh chụp màn hình hệ thống Make thật đang chạy: dây chuyền AI tự viết bài rồi đăng lên Fanpage" class="w-full h-auto" loading="lazy">
     </div>
   </div>
 </section>
@@ -110,6 +116,10 @@ tailwind.config = { theme: { extend: {
     <p>Không phải app đóng hộp thuê hàng tháng. Đây là bộ máy của chính bạn, đặt trên tài khoản của bạn, viết đúng giọng thương hiệu bạn cài vào - và một khi dựng xong, nó chạy đều mà không đòi bạn ngồi canh.</p>
     <p class="font-semibold">Tôi gói toàn bộ cách làm lại thành "Fanpage Tự Vận Hành".</p>
   </div>
+  <figure class="mt-6 rounded-xl overflow-hidden border bg-white p-4">
+    <img src="assets/make-ket-noi-ai.png" alt="Sơ đồ nền tảng Make ở trung tâm kết nối với các công cụ AI phổ biến: ChatGPT, Claude, Gemini và nhiều ứng dụng khác" class="w-full h-auto" loading="lazy">
+    <figcaption class="text-xs text-gray-400 text-center mt-2">Make nối các công cụ AI về một mối để tạo thành dây chuyền tự động (nguồn ảnh: make.com)</figcaption>
+  </figure>
 </section>
 
 <!-- KHỐI 6 - Lợi ích (4 lớp) + lời hứa có tên -->
@@ -141,6 +151,9 @@ tailwind.config = { theme: { extend: {
 <section class="py-12 px-4 bg-gray-50">
   <div class="max-w-3xl mx-auto">
     <h2 class="text-2xl font-bold mb-6 text-center">"Fanpage Tự Vận Hành" là gì?</h2>
+    <figure class="max-w-xl mx-auto mb-6 rounded-xl overflow-hidden shadow-sm border">
+      <img src="assets/mockup-khoa-chinh.jpg" alt="Minh hoạ khóa học chính Fanpage Tự Vận Hành trên màn hình máy tính, 4 chương 15 bài" class="w-full h-auto" loading="lazy">
+    </figure>
     <div class="grid md:grid-cols-2 gap-4 text-gray-700">
       <div class="bg-white p-4 rounded-lg"><b>Là gì:</b> Khóa online 4 chương - 15 bài, dạy tự tay dựng hệ thống Make khiến Fanpage tự đăng bài + tự trả lời khách.</div>
       <div class="bg-white p-4 rounded-lg"><b>Cho ai:</b> Chủ SME đội mỏng, trưởng phòng marketing tự lo 1-vài Fanpage một mình.</div>
@@ -215,6 +228,9 @@ tailwind.config = { theme: { extend: {
 <!-- KHỐI 13 - Value-stack (có dòng TỔNG) -->
 <section class="py-12 px-4">
   <h2 class="text-2xl font-bold text-center mb-6">Bạn nhận được gì với 868.000đ hôm nay</h2>
+  <figure class="max-w-2xl mx-auto mb-6 rounded-xl overflow-hidden shadow-sm border">
+    <img src="assets/mockup-tong-hop.jpg" alt="Minh hoạ trọn bộ sản phẩm: khóa học Fanpage Tự Vận Hành trên màn hình lớn cùng 4 quà tặng trên laptop, máy tính bảng, điện thoại và hộp bộ dây chuyền" class="w-full h-auto" loading="lazy">
+  </figure>
   <div class="max-w-2xl mx-auto border rounded-xl overflow-hidden shadow-sm">
     <table class="w-full text-sm md:text-base"><tbody>
       <tr class="border-b"><td class="p-3">Trọn khóa "Fanpage Tự Vận Hành" - 4 chương, 15 bài</td><td class="p-3 text-right font-semibold">1.800.000đ</td></tr>
@@ -236,10 +252,10 @@ tailwind.config = { theme: { extend: {
   <div class="max-w-3xl mx-auto">
     <h2 class="text-2xl font-bold text-center mb-6">Đăng ký hôm nay nhận thêm 4 quà tặng</h2>
     <div class="space-y-3">
-      <div class="bg-white p-4 rounded-lg"><p><b>BONUS 1 - Buổi Zoom Cầm Tay Dựng Máy:</b> dựng bộ máy cùng lúc với người hướng dẫn, mắc ở đâu gỡ ngay ở đó. Giải nỗi lo "xem video một mình dễ tắc giữa chừng rồi bỏ".</p></div>
-      <div class="bg-white p-4 rounded-lg"><p><b>BONUS 2 - Bộ Dây Chuyền Điền-Là-Chạy:</b> scenarios mẫu sẵn cho cả 7 việc (viết bài, tạo ảnh, đăng bài, trả lời comment, nhắn tin, thả tim, chatbot). Giải nỗi lo "sợ dựng từ đầu sai bước".</p></div>
-      <div class="bg-white p-4 rounded-lg"><p><b>BONUS 3 - Trợ Lý Cài Giọng Thương Hiệu:</b> công cụ viết ra "hồ sơ giọng" để máy viết bài đúng chất riêng, không vô hồn kiểu robot.</p></div>
-      <div class="bg-white p-4 rounded-lg"><p><b>BONUS 4 - Cộng Đồng Người Cùng Dựng Máy:</b> nhóm riêng để hỏi đáp, cập nhật khi Facebook hoặc công cụ đổi. Giải nỗi lo "làm một mình, kẹt là kẹt luôn".</p></div>
+      <div class="bg-white p-4 rounded-lg flex flex-col md:flex-row items-center gap-4"><img src="assets/mockup-qua-1-zoom.jpg" alt="Minh hoạ quà tặng 1: buổi Zoom cầm tay dựng máy trên laptop" class="w-40 md:w-44 shrink-0 rounded-lg border" loading="lazy"><p><b>BONUS 1 - Buổi Zoom Cầm Tay Dựng Máy:</b> dựng bộ máy cùng lúc với người hướng dẫn, mắc ở đâu gỡ ngay ở đó. Giải nỗi lo "xem video một mình dễ tắc giữa chừng rồi bỏ".</p></div>
+      <div class="bg-white p-4 rounded-lg flex flex-col md:flex-row items-center gap-4"><img src="assets/mockup-qua-2-day-chuyen.jpg" alt="Minh hoạ quà tặng 2: hộp bộ 7 dây chuyền điền-là-chạy" class="w-28 md:w-32 shrink-0 rounded-lg border" loading="lazy"><p><b>BONUS 2 - Bộ Dây Chuyền Điền-Là-Chạy:</b> scenarios mẫu sẵn cho cả 7 việc (viết bài, tạo ảnh, đăng bài, trả lời comment, nhắn tin, thả tim, chatbot). Giải nỗi lo "sợ dựng từ đầu sai bước".</p></div>
+      <div class="bg-white p-4 rounded-lg flex flex-col md:flex-row items-center gap-4"><img src="assets/mockup-qua-3-tro-ly.jpg" alt="Minh hoạ quà tặng 3: trợ lý cài giọng thương hiệu trên điện thoại" class="w-28 md:w-32 shrink-0 rounded-lg border" loading="lazy"><p><b>BONUS 3 - Trợ Lý Cài Giọng Thương Hiệu:</b> công cụ viết ra "hồ sơ giọng" để máy viết bài đúng chất riêng, không vô hồn kiểu robot.</p></div>
+      <div class="bg-white p-4 rounded-lg flex flex-col md:flex-row items-center gap-4"><img src="assets/mockup-qua-4-cong-dong.jpg" alt="Minh hoạ quà tặng 4: cộng đồng người cùng dựng máy trên máy tính bảng" class="w-28 md:w-32 shrink-0 rounded-lg border" loading="lazy"><p><b>BONUS 4 - Cộng Đồng Người Cùng Dựng Máy:</b> nhóm riêng để hỏi đáp, cập nhật khi Facebook hoặc công cụ đổi. Giải nỗi lo "làm một mình, kẹt là kẹt luôn".</p></div>
     </div>
   </div>
 </section>
