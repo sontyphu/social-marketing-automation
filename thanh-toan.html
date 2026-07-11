@@ -54,23 +54,23 @@ tailwind.config = { theme: { extend: {
       <div class="bg-white border-2 border-primary rounded-2xl shadow-xl p-6 text-center">
         <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-blue-50 px-3 py-1 rounded-full mb-3">Quét để thanh toán</span>
         <h2 class="text-xl font-bold mb-1">Chuyển khoản bằng mã QR</h2>
-        <p class="text-sm text-gray-500 mb-4">Mở app ngân hàng → bấm <b>Quét QR</b> → kiểm tra đúng tên <b>LE THANH SON</b> rồi xác nhận.</p>
+        <p class="text-sm text-gray-500 mb-4">Mở app ngân hàng → bấm <b>Quét QR</b> → kiểm tra đúng tên <b>CONG TY TNHH WINNET PRO</b> rồi xác nhận.</p>
 
-        <img id="qrImg" src="assets/qr-chuyen-khoan.png" alt="Mã QR chuyển khoản HD Bank - LE THANH SON" class="w-56 mx-auto rounded-xl border p-2 bg-white">
+        <img id="qrImg" src="assets/qr-mbbank.jpg" alt="Mã QR chuyển khoản MB Bank - CONG TY TNHH WINNET PRO" class="w-56 mx-auto rounded-xl border p-2 bg-white">
 
         <div class="grid gap-2 text-left mt-4">
           <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
             <span class="text-xs text-gray-500 font-semibold">Ngân hàng</span>
-            <span class="font-bold" id="vBank">HD Bank</span>
+            <span class="font-bold" id="vBank">MB Bank</span>
           </div>
           <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
             <span class="text-xs text-gray-500 font-semibold">Số tài khoản</span>
-            <span class="font-bold" id="vAcc">072704070003907</span>
+            <span class="font-bold" id="vAcc">7750538888</span>
             <button class="copy text-xs font-bold text-primary bg-blue-50 px-2 py-1 rounded" data-copy="vAcc">Sao chép</button>
           </div>
           <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
             <span class="text-xs text-gray-500 font-semibold">Chủ tài khoản</span>
-            <span class="font-bold" id="vHolder">LE THANH SON</span>
+            <span class="font-bold" id="vHolder">CONG TY TNHH WINNET PRO</span>
           </div>
           <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
             <span class="text-xs text-gray-500 font-semibold">Số tiền</span>
@@ -139,7 +139,7 @@ tailwind.config = { theme: { extend: {
         <span class="text-2xl">🛡️</span>
         <div>
           <h3 class="font-bold">Học cầm tay, có hỗ trợ</h3>
-          <p class="text-sm text-gray-600 mt-1">Buổi học hướng dẫn từng bước, làm tới đâu chắc tới đó, có cộng đồng hỏi đáp khi vướng. Chuyển khoản trực tiếp vào tài khoản chính chủ <b>LE THANH SON</b>, không qua trung gian.</p>
+          <p class="text-sm text-gray-600 mt-1">Buổi học hướng dẫn từng bước, làm tới đâu chắc tới đó, có cộng đồng hỏi đáp khi vướng. Chuyển khoản trực tiếp vào tài khoản <b>Công ty TNHH Winnet Pro</b> - công ty của Lê Thanh Sơn, không qua trung gian.</p>
         </div>
       </div>
 
@@ -172,7 +172,7 @@ tailwind.config = { theme: { extend: {
 
 <script>
 // ==== CẤU HÌNH - chỉ cần sửa trong khối này ====
-var PAY = { bankBin:"970437", bankName:"HD Bank", account:"072704070003907", holder:"LE THANH SON", amount:"868000" };
+var PAY = { bankBin:"970422", bankName:"MB Bank", account:"7750538888", holder:"CONG TY TNHH WINNET PRO", amount:"868000" };
 var PRODUCT   = "Khóa Fanpage Tự Vận Hành - 4 chương, 15 bài";
 var PRICE_OLD = "2400000";
 var ZALO      = "0343928094";
@@ -206,13 +206,13 @@ if(oldNum){ setText('pOld',vnd(oldNum)+'đ');
 // ô ẩn: số tiền thuần cho nút sao chép
 var raw=document.createElement('span'); raw.id='vAmountRaw'; raw.style.display='none'; raw.textContent=amountNum||''; document.body.appendChild(raw);
 
-// QR động VietQR (nội dung = FTVH + SĐT); lỗi -> rơi về ảnh tĩnh assets/qr-chuyen-khoan.png
+// QR động VietQR (nội dung = FTVH + SĐT); lỗi -> rơi về ảnh tĩnh assets/qr-mbbank.jpg
 if(PAY.bankBin && PAY.account){
   var url='https://img.vietqr.io/image/'+PAY.bankBin+'-'+PAY.account+'-compact2.png?accountName='+encodeURIComponent(PAY.holder);
   if(amountNum) url+='&amount='+amountNum;
   url+='&addInfo='+encodeURIComponent(phone?noiDung:'Fanpage Tu Van Hanh');
   var qr=document.getElementById('qrImg');
-  qr.setAttribute('onerror',"this.onerror=null;this.src='assets/qr-chuyen-khoan.png';");
+  qr.setAttribute('onerror',"this.onerror=null;this.src='assets/qr-mbbank.jpg';");
   qr.src=url;
 }
 
