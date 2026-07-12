@@ -19,7 +19,7 @@ try{ if('{{FB_PIXEL_ID}}'.indexOf('{{')<0){ fbq('init','{{FB_PIXEL_ID}}'); fbq('
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
 tailwind.config = { theme: { extend: {
-  colors: { primary: '#1877F2', accent: '#7C3AED' },
+  colors: { primary: '#8200FA', accent: '#BE24C3', plum: '#220041' },
   fontFamily: { sans: ['"Be Vietnam Pro"','sans-serif'] },
   maxWidth: { sm:'499px', md:'582px', lg:'666px', xl:'749px', '2xl':'874px', '3xl':'998px', '4xl':'1165px', '5xl':'1331px' }
 }}}
@@ -32,9 +32,9 @@ tailwind.config = { theme: { extend: {
 <body class="bg-gray-50 text-gray-900">
 
 <!-- Thanh xác nhận quyết định -->
-<header class="bg-gradient-to-br from-primary to-[#6D28D9] text-white text-center py-6 px-4">
+<header class="bg-gradient-to-br from-primary to-plum text-white text-center py-6 px-4">
   <div class="max-w-3xl mx-auto">
-    <div class="flex flex-wrap justify-center items-center gap-2 text-sm font-semibold text-blue-200 mb-3">
+    <div class="flex flex-wrap justify-center items-center gap-2 text-sm font-semibold text-purple-200 mb-3">
       <span class="text-green-300">✓ Đã đăng ký</span>
       <span class="opacity-60">→</span>
       <span class="text-white">Thanh toán giữ chỗ</span>
@@ -42,7 +42,7 @@ tailwind.config = { theme: { extend: {
       <span>Vào học</span>
     </div>
     <h1 id="hello" class="text-2xl md:text-3xl font-extrabold max-w-xl mx-auto">Còn một bước nữa là xong!</h1>
-    <p class="text-blue-100 max-w-lg mx-auto mt-2">Quét mã QR bên dưới để hoàn tất giữ chỗ khóa <b id="pName2">Fanpage Tự Vận Hành</b>. Chuyển khoản xong, chỗ của bạn được xác nhận và mình liên hệ Zalo để gửi lịch học.</p>
+    <p class="text-purple-100 max-w-lg mx-auto mt-2">Quét mã QR bên dưới để hoàn tất giữ chỗ khóa <b id="pName2">Fanpage Tự Vận Hành</b>. Chuyển khoản xong, chỗ của bạn được xác nhận và mình liên hệ Zalo để gửi lịch học.</p>
   </div>
 </header>
 
@@ -52,7 +52,7 @@ tailwind.config = { theme: { extend: {
     <!-- CỘT THANH TOÁN (mobile: lên trên) -->
     <aside class="w-full md:flex-1 md:max-w-md md:sticky md:top-4">
       <div class="bg-white border-2 border-primary rounded-2xl shadow-xl p-6 text-center">
-        <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-blue-50 px-3 py-1 rounded-full mb-3">Quét để thanh toán</span>
+        <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-purple-50 px-3 py-1 rounded-full mb-3">Quét để thanh toán</span>
         <h2 class="text-xl font-bold mb-1">Chuyển khoản bằng mã QR</h2>
         <p class="text-sm text-gray-500 mb-4">Mở app ngân hàng → bấm <b>Quét QR</b> → kiểm tra đúng tên <b>CONG TY TNHH WINNET PRO</b> rồi xác nhận.</p>
 
@@ -66,7 +66,7 @@ tailwind.config = { theme: { extend: {
           <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
             <span class="text-xs text-gray-500 font-semibold">Số tài khoản</span>
             <span class="font-bold" id="vAcc">7750538888</span>
-            <button class="copy text-xs font-bold text-primary bg-blue-50 px-2 py-1 rounded" data-copy="vAcc">Sao chép</button>
+            <button class="copy text-xs font-bold text-primary bg-purple-50 px-2 py-1 rounded" data-copy="vAcc">Sao chép</button>
           </div>
           <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
             <span class="text-xs text-gray-500 font-semibold">Chủ tài khoản</span>
@@ -75,12 +75,12 @@ tailwind.config = { theme: { extend: {
           <div class="flex justify-between items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
             <span class="text-xs text-gray-500 font-semibold">Số tiền</span>
             <span class="font-extrabold text-accent text-lg" id="vAmount">868.000đ</span>
-            <button class="copy text-xs font-bold text-primary bg-blue-50 px-2 py-1 rounded" data-copy="vAmountRaw">Sao chép</button>
+            <button class="copy text-xs font-bold text-primary bg-purple-50 px-2 py-1 rounded" data-copy="vAmountRaw">Sao chép</button>
           </div>
           <div class="flex justify-between items-center gap-2 bg-amber-50 border border-amber-300 rounded-lg px-3 py-2">
             <span class="text-xs text-amber-700 font-semibold">Nội dung CK</span>
             <span class="font-bold text-amber-900" id="vNote">FTVH [SĐT của bạn]</span>
-            <button class="copy text-xs font-bold text-primary bg-blue-50 px-2 py-1 rounded" data-copy="vNote">Sao chép</button>
+            <button class="copy text-xs font-bold text-primary bg-purple-50 px-2 py-1 rounded" data-copy="vNote">Sao chép</button>
           </div>
         </div>
 
@@ -105,7 +105,7 @@ tailwind.config = { theme: { extend: {
     <main class="w-full md:flex-1">
       <!-- Tóm tắt đơn -->
       <div class="bg-white border rounded-2xl shadow-sm p-6 mb-4">
-        <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-blue-50 px-3 py-1 rounded-full mb-3">Đơn hàng của bạn</span>
+        <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-purple-50 px-3 py-1 rounded-full mb-3">Đơn hàng của bạn</span>
         <div class="flex justify-between items-baseline gap-3">
           <span class="font-bold" id="pName">Khóa Fanpage Tự Vận Hành - 4 chương, 15 bài</span>
           <span class="line-through text-gray-400 text-sm" id="pOld">2.400.000đ</span>
@@ -119,7 +119,7 @@ tailwind.config = { theme: { extend: {
 
       <!-- Bạn nhận được -->
       <div class="bg-white border rounded-2xl shadow-sm p-6 mb-4">
-        <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-blue-50 px-3 py-1 rounded-full mb-3">Bạn nhận được</span>
+        <span class="inline-block text-xs font-bold uppercase tracking-wide text-primary bg-purple-50 px-3 py-1 rounded-full mb-3">Bạn nhận được</span>
         <ul class="grid gap-2 text-sm">
           <li class="flex gap-2"><span class="text-green-600 font-bold">✓</span> <span><b>Trọn khóa 4 chương - 15 bài</b> cầm tay chỉ việc: dựng bộ máy tự đăng bài + tự trả lời khách 24/7.</span></li>
           <li class="flex gap-2"><span class="text-green-600 font-bold">✓</span> <span><b>Buổi Zoom cầm tay dựng máy</b> - mắc đâu gỡ đó cùng người hướng dẫn.</span></li>
@@ -135,7 +135,7 @@ tailwind.config = { theme: { extend: {
       </div>
 
       <!-- Yên tâm -->
-      <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5 mb-4 flex gap-3 items-start">
+      <div class="bg-purple-50 border border-purple-100 rounded-2xl p-5 mb-4 flex gap-3 items-start">
         <span class="text-2xl">🛡️</span>
         <div>
           <h3 class="font-bold">Học cầm tay, có hỗ trợ</h3>
