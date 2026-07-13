@@ -12,13 +12,13 @@
 <meta property="og:type" content="website">
 
 <!-- ĐO LƯỜNG - thay ID THẬT trước khi chạy ads; bỏ pixel không dùng (R8: không nhúng ID người khác) -->
-<!-- Meta Pixel: {{FB_PIXEL_ID}} | TikTok: {{TIKTOK_PIXEL_ID}} | GA4: {{GA4_ID}} -->
+<!-- Meta Pixel: 1324953789789972 (dùng chung với khóa Second Brain) | TikTok: chưa dùng | GA4: chưa dùng -->
 <script>
-/* Meta Pixel (điền {{FB_PIXEL_ID}} thật để bật trước khi chạy ads) */
+/* Meta Pixel 1324953789789972 - dùng chung với khóa Second Brain (phân biệt khóa bằng content_name) */
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
 s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-try{ if('{{FB_PIXEL_ID}}'.indexOf('{{')<0){ fbq('init','{{FB_PIXEL_ID}}'); fbq('track','PageView'); } }catch(e){}
+try{ fbq('set','autoConfig',false,'1324953789789972'); fbq('init','1324953789789972'); fbq('track','PageView'); }catch(e){}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -585,7 +585,7 @@ vi_tri:(window.__ltsViTri||''),
 khach:(window.__ltsKhach||'')
 };
 try{sessionStorage.setItem('ftvh_order',JSON.stringify(order));}catch(_){}
-try{if(window.fbq)fbq('track','Lead');}catch(_){}
+try{if(window.fbq)fbq('track','Lead',{content_name:'Fanpage Tu Van Hanh'});}catch(_){}
 var WEBHOOK_URL="https://hook.eu2.make.com/4nwbpefb3dhg5fri8d6lojfbc4o5opua";
 try{if(WEBHOOK_URL)fetch(WEBHOOK_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(order)});}catch(_){}
 window.location.href='thanh-toan.html';return false;}
