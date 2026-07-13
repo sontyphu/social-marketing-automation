@@ -14,20 +14,9 @@ s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'
 try{ if('{{FB_PIXEL_ID}}'.indexOf('{{')<0){ fbq('init','{{FB_PIXEL_ID}}'); fbq('track','PageView'); } }catch(e){}
 </script>
 
-<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script>
-tailwind.config = { theme: { extend: {
-  colors: { primary: '#8200FA', accent: '#BE24C3', plum: '#220041' },
-  fontFamily: { sans: ['"Be Vietnam Pro"','sans-serif'] },
-  maxWidth: { sm:'499px', md:'582px', lg:'666px', xl:'749px', '2xl':'874px', '3xl':'998px', '4xl':'1165px', '5xl':'1331px' }
-}}}
-</script>
-<style>
-  body{font-family:"Be Vietnam Pro",sans-serif; overflow-x:hidden}
-  img{max-width:100%;height:auto}
-</style>
+<link rel="stylesheet" href="assets/tailwind.css">
 </head>
 <body class="bg-gray-50 text-gray-900">
 

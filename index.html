@@ -8,7 +8,7 @@
 <!-- Open Graph -->
 <meta property="og:title" content="Fanpage Tự Vận Hành - Tự đăng bài đúng giọng thương hiệu, tự rep khách 24/7">
 <meta property="og:description" content="Tự tay dựng bộ máy để Fanpage tự đăng bài + tự trả lời khách 24/7, không cần ngồi trực. Ưu đãi mở bán sớm 868.000đ.">
-<meta property="og:image" content="assets/chan-dung-chuyen-nghiep.jpg">
+<meta property="og:image" content="assets/mockup-tong-hop.jpg">
 <meta property="og:type" content="website">
 
 <!-- ĐO LƯỜNG - thay ID THẬT trước khi chạy ads; bỏ pixel không dùng (R8: không nhúng ID người khác) -->
@@ -21,24 +21,11 @@ s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'
 try{ if('{{FB_PIXEL_ID}}'.indexOf('{{')<0){ fbq('init','{{FB_PIXEL_ID}}'); fbq('track','PageView'); } }catch(e){}
 </script>
 
-<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script>
-tailwind.config = { theme: { extend: {
-  colors: { primary: '#8200FA', accent: '#BE24C3', plum: '#220041' },
-  fontFamily: { sans: ['"Be Vietnam Pro"','sans-serif'] },
-  maxWidth: { sm:'499px', md:'582px', lg:'666px', xl:'749px', '2xl':'874px', '3xl':'998px', '4xl':'1165px', '5xl':'1331px' }
-}}}
-</script>
-<style>
-  body{font-family:"Be Vietnam Pro",sans-serif; overflow-x:hidden}
-  img,video{max-width:100%;height:auto}
-  #readbar{position:fixed;top:0;left:0;height:3px;width:0;background:#F024F6;z-index:60;transition:width .1s}
-  .justify-text{text-align:justify}
-</style>
+<link rel="stylesheet" href="assets/tailwind.css">
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 pb-24 md:pb-0">
 
 <!-- thanh tiến trình đọc -->
 <div id="readbar"></div>
@@ -50,12 +37,13 @@ tailwind.config = { theme: { extend: {
 </div>
 
 <!-- KHỐI 2 - Hero -->
-<section class="pt-12 pb-10 px-4 text-center bg-gradient-to-b from-primary/5 via-accent/5 to-white">
+<section class="pt-12 pb-10 px-4 text-center bg-gradient-to-b from-primary/10 via-accent/10 to-white">
   <div class="max-w-3xl mx-auto">
+    <p class="inline-flex items-center gap-2 mb-4 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold"><span class="w-2 h-2 rounded-full bg-fb"></span> Khóa học tự động hóa Fanpage bằng Make</p>
     <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">FANPAGE CỦA BẠN CÓ THỂ TỰ ĐĂNG BÀI VÀ TỰ TRẢ LỜI KHÁCH - CẢ KHI BẠN ĐANG NGỦ</h1>
     <p class="mt-4 text-lg md:text-xl text-gray-600">Cách tự tay dựng một bộ máy khiến Fanpage đăng đều đúng giọng thương hiệu và rep khách 24/7, mà bạn không phải ngồi ôm điện thoại canh page nữa - dù bạn chưa từng đụng tới một dòng kỹ thuật nào.</p>
     <p class="mt-3 text-base text-gray-500">(kể cả khi bạn đã thử thuê người, thử app đóng hộp, hay từng bỏ page nằm im vì hết giờ)</p>
-    <a href="#dangky" data-cta class="inline-block mt-7 bg-accent text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:opacity-90 transition">YES! TÔI MUỐN DỰNG BỘ MÁY CHO FANPAGE CỦA TÔI - CHỈ 868.000Đ</a>
+    <a href="#dangky" data-cta class="inline-block mt-7 bg-accent text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:opacity-90 transition">TÔI MUỐN DỰNG BỘ MÁY - CHỈ 868.000Đ</a>
     <p class="mt-2 text-sm text-gray-500">Ưu đãi mở bán sớm cho nhóm học đầu tiên (Giá gốc <span class="line-through">2.400.000đ</span>)</p>
     <div class="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-500">
       <span><b class="text-gray-900">4</b> chương</span>
@@ -67,7 +55,7 @@ tailwind.config = { theme: { extend: {
         <source src="assets/video-gioi-thieu.mp4" type="video/mp4">
       </video>
     </div>
-    <a href="#dangky" data-cta class="inline-block mt-5 bg-accent text-white px-8 py-4 rounded-xl font-bold">XEM XONG LÀ MUỐN CÓ? DỰNG BỘ MÁY CỦA BẠN NGAY</a>
+    <a href="#dangky" data-cta class="inline-block mt-5 bg-accent text-white px-8 py-4 rounded-xl font-bold">Dựng bộ máy của bạn ngay</a>
   </div>
 </section>
 
@@ -140,7 +128,7 @@ tailwind.config = { theme: { extend: {
     <img src="assets/ai-tuong-lai-thanh-thoi.jpg" alt="Minh hoạ chủ shop thảnh thơi gấp laptop lúc 6 giờ chiều, Fanpage vẫn tự chạy" class="w-full h-auto" loading="lazy">
   </figure>
   <p class="text-lg text-gray-700 leading-relaxed justify-text">Hình dung một buổi tối bạn đóng máy tính lúc 6 giờ, không phải mở lại điện thoại lúc 11 giờ đêm để trả lời comment. Page vẫn đăng bài đúng lịch. Khách vẫn được rep gần như ngay lập tức. Bạn giải phóng hàng giờ mỗi ngày để quay lại lo phần chỉ con người mới làm được: sản phẩm, khách lớn, chiến lược.</p>
-  <a href="#dangky" data-cta class="inline-block mt-6 bg-accent text-white px-8 py-4 rounded-xl font-bold">YES! TÔI MUỐN DỰNG BỘ MÁY NÀY</a>
+  <a href="#dangky" data-cta class="inline-block mt-6 bg-accent text-white px-8 py-4 rounded-xl font-bold">Tôi muốn dựng bộ máy này</a>
 </section>
 
 <!-- KHỐI 8 - Rõ ràng + agenda hành trình (module bám 4 chương) -->
@@ -192,43 +180,71 @@ tailwind.config = { theme: { extend: {
     <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Mỗi dây chuyền là một việc trên Fanpage được máy làm thay. Trong khóa bạn dựng theo hướng dẫn từng bước, cắm vào là chạy - ngay trên tài khoản của chính mình.</p>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
       <div class="bg-white border rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="h-40 bg-gray-100 border-b flex items-center justify-center text-gray-400 text-xs text-center px-3">[Ảnh minh hoạ workflow - bổ sung sau]</div>
-        <div class="p-4"><h3 class="font-bold text-primary mb-1">1. Tự viết bài đăng Fanpage</h3><p class="text-sm text-gray-600">Chỉ cần từ khoá chủ đề, dây chuyền tự viết bài đúng giọng thương hiệu, sẵn sàng để đăng.</p></div>
+        <div class="relative aspect-video bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+          <span class="text-white/90 text-4xl font-extrabold">1</span>
+          <img src="assets/workflow-1.jpg" alt="Dây chuyền Make: tự viết bài đăng Fanpage" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="p-4"><h3 class="font-bold text-primary mb-1">Tự viết bài đăng Fanpage</h3><p class="text-sm text-gray-600">Chỉ cần từ khoá chủ đề, dây chuyền tự viết bài đúng giọng thương hiệu, sẵn sàng để đăng.</p></div>
       </div>
       <div class="bg-white border rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="h-40 bg-gray-100 border-b flex items-center justify-center text-gray-400 text-xs text-center px-3">[Ảnh minh hoạ workflow - bổ sung sau]</div>
-        <div class="p-4"><h3 class="font-bold text-primary mb-1">2. Tự tổng hợp tin ngành thành bài đăng</h3><p class="text-sm text-gray-600">Dây chuyền tự gom tin và nội dung mới trong ngành, viết lại thành bài đăng cho Fanpage - bạn không lo cạn ý tưởng.</p></div>
+        <div class="relative aspect-video bg-gradient-to-br from-primary to-fb flex items-center justify-center">
+          <span class="text-white/90 text-4xl font-extrabold">2</span>
+          <img src="assets/workflow-2.jpg" alt="Dây chuyền Make: tự tổng hợp tin ngành thành bài đăng" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="p-4"><h3 class="font-bold text-primary mb-1">Tự tổng hợp tin ngành thành bài đăng</h3><p class="text-sm text-gray-600">Dây chuyền tự gom tin và nội dung mới trong ngành, viết lại thành bài đăng cho Fanpage - bạn không lo cạn ý tưởng.</p></div>
       </div>
       <div class="bg-white border rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="h-40 bg-gray-100 border-b flex items-center justify-center text-gray-400 text-xs text-center px-3">[Ảnh minh hoạ workflow - bổ sung sau]</div>
-        <div class="p-4"><h3 class="font-bold text-primary mb-1">3. Tự tạo ảnh cho bài đăng</h3><p class="text-sm text-gray-600">Mỗi bài được sinh sẵn một tấm ảnh đi kèm, page nhìn chỉn chu mà không cần thuê thiết kế cho từng post.</p></div>
+        <div class="relative aspect-video bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+          <span class="text-white/90 text-4xl font-extrabold">3</span>
+          <img src="assets/workflow-3.jpg" alt="Dây chuyền Make: tự tạo ảnh cho bài đăng" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="p-4"><h3 class="font-bold text-primary mb-1">Tự tạo ảnh cho bài đăng</h3><p class="text-sm text-gray-600">Mỗi bài được sinh sẵn một tấm ảnh đi kèm, page nhìn chỉn chu mà không cần thuê thiết kế cho từng post.</p></div>
       </div>
       <div class="bg-white border rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="h-40 bg-gray-100 border-b flex items-center justify-center text-gray-400 text-xs text-center px-3">[Ảnh minh hoạ workflow - bổ sung sau]</div>
-        <div class="p-4"><h3 class="font-bold text-primary mb-1">4. Tự đăng bài lên Fanpage theo lịch</h3><p class="text-sm text-gray-600">Bài lên đúng chỗ, đúng giờ, page đều đặn mỗi tuần mà bạn không phải ngồi canh để đăng.</p></div>
+        <div class="relative aspect-video bg-gradient-to-br from-primary to-fb flex items-center justify-center">
+          <span class="text-white/90 text-4xl font-extrabold">4</span>
+          <img src="assets/workflow-4.jpg" alt="Dây chuyền Make: tự đăng bài lên Fanpage theo lịch" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="p-4"><h3 class="font-bold text-primary mb-1">Tự đăng bài lên Fanpage theo lịch</h3><p class="text-sm text-gray-600">Bài lên đúng chỗ, đúng giờ, page đều đặn mỗi tuần mà bạn không phải ngồi canh để đăng.</p></div>
       </div>
       <div class="bg-white border rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="h-40 bg-gray-100 border-b flex items-center justify-center text-gray-400 text-xs text-center px-3">[Ảnh minh hoạ workflow - bổ sung sau]</div>
-        <div class="p-4"><h3 class="font-bold text-primary mb-1">5. Tự lên lịch loạt bài cả tuần</h3><p class="text-sm text-gray-600">Dựng sẵn một loạt bài rồi rải đều các ngày, page luôn có bài mới mà bạn chỉ cần set một lần.</p></div>
+        <div class="relative aspect-video bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+          <span class="text-white/90 text-4xl font-extrabold">5</span>
+          <img src="assets/workflow-5.jpg" alt="Dây chuyền Make: tự lên lịch loạt bài cả tuần" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="p-4"><h3 class="font-bold text-primary mb-1">Tự lên lịch loạt bài cả tuần</h3><p class="text-sm text-gray-600">Dựng sẵn một loạt bài rồi rải đều các ngày, page luôn có bài mới mà bạn chỉ cần set một lần.</p></div>
       </div>
       <div class="bg-white border rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="h-40 bg-gray-100 border-b flex items-center justify-center text-gray-400 text-xs text-center px-3">[Ảnh minh hoạ workflow - bổ sung sau]</div>
-        <div class="p-4"><h3 class="font-bold text-primary mb-1">6. Tự trả lời bình luận khách</h3><p class="text-sm text-gray-600">Khách vừa bình luận là được đáp ngay, giữ được lúc họ đang quan tâm nhất.</p></div>
+        <div class="relative aspect-video bg-gradient-to-br from-primary to-fb flex items-center justify-center">
+          <span class="text-white/90 text-4xl font-extrabold">6</span>
+          <img src="assets/workflow-6.jpg" alt="Dây chuyền Make: đăng Facebook đa phương tiện" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="p-4"><h3 class="font-bold text-primary mb-1">Đăng Facebook đa phương tiện</h3><p class="text-sm text-gray-600">Một bài gồm nhiều ảnh hoặc video cùng lúc, dây chuyền tự ghép đúng định dạng rồi đăng lên, không cần đăng tay từng tấm.</p></div>
       </div>
       <div class="bg-white border rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="h-40 bg-gray-100 border-b flex items-center justify-center text-gray-400 text-xs text-center px-3">[Ảnh minh hoạ workflow - bổ sung sau]</div>
-        <div class="p-4"><h3 class="font-bold text-primary mb-1">7. Tự nhắn tin khi khách bình luận</h3><p class="text-sm text-gray-600">Dây chuyền tự chuyển khách từ khung bình luận sang tin nhắn riêng để tư vấn sâu hơn.</p></div>
+        <div class="relative aspect-video bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+          <span class="text-white/90 text-4xl font-extrabold">7</span>
+          <img src="assets/workflow-7.jpg" alt="Dây chuyền Make: tự nhắn tin khi khách bình luận" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="p-4"><h3 class="font-bold text-primary mb-1">Tự nhắn tin khi khách bình luận</h3><p class="text-sm text-gray-600">Dây chuyền tự chuyển khách từ khung bình luận sang tin nhắn riêng để tư vấn sâu hơn.</p></div>
       </div>
       <div class="bg-white border rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="h-40 bg-gray-100 border-b flex items-center justify-center text-gray-400 text-xs text-center px-3">[Ảnh minh hoạ workflow - bổ sung sau]</div>
-        <div class="p-4"><h3 class="font-bold text-primary mb-1">8. Tự thả tim bình luận khách</h3><p class="text-sm text-gray-600">Bình luận của khách được thả tim tự động, khách thấy được quan tâm, tương tác page tăng.</p></div>
+        <div class="relative aspect-video bg-gradient-to-br from-primary to-fb flex items-center justify-center">
+          <span class="text-white/90 text-4xl font-extrabold">8</span>
+          <img src="assets/workflow-8.jpg" alt="Dây chuyền Make: tự động trả lời inbox Messenger" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="p-4"><h3 class="font-bold text-primary mb-1">Tự động trả lời inbox Messenger</h3><p class="text-sm text-gray-600">Khách nhắn tin hỏi trong Messenger được trả lời ngay, không phải đợi bạn rảnh tay mới đọc.</p></div>
       </div>
       <div class="bg-white border rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="h-40 bg-gray-100 border-b flex items-center justify-center text-gray-400 text-xs text-center px-3">[Ảnh minh hoạ workflow - bổ sung sau]</div>
-        <div class="p-4"><h3 class="font-bold text-primary mb-1">9. Chatbot đón khách 24/7</h3><p class="text-sm text-gray-600">Trợ lý trả lời tự động đón và giải đáp khách kể cả ngoài giờ, không để ai chờ.</p></div>
+        <div class="relative aspect-video bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+          <span class="text-white/90 text-4xl font-extrabold">9</span>
+          <img src="assets/workflow-9.jpg" alt="Dây chuyền Make: chatbot đón khách 24/7" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="p-4"><h3 class="font-bold text-primary mb-1">Chatbot đón khách 24/7</h3><p class="text-sm text-gray-600">Trợ lý trả lời tự động đón và giải đáp khách kể cả ngoài giờ, không để ai chờ.</p></div>
       </div>
     </div>
     <p class="text-center text-xs text-gray-400 mt-6">Chạy trong ngưỡng an toàn để page không bị nền tảng hạn chế - có hẳn một chương dạy phần này.</p>
+    <div class="text-center mt-8"><a href="#dangky" data-cta class="inline-block bg-accent text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:opacity-90 transition">Tôi muốn tự dựng 9 dây chuyền này</a></div>
   </div>
 </section>
 
@@ -298,6 +314,11 @@ tailwind.config = { theme: { extend: {
   </div>
 </section>
 
+<!-- CTA giữa (sau lời chứng) -->
+<section class="pb-8 px-4 text-center">
+  <a href="#dangky" data-cta class="inline-block bg-accent text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:opacity-90 transition">Tôi cũng muốn Fanpage tự chạy như vậy</a>
+</section>
+
 <!-- KHỐI 16a - Trước/Sau -->
 <section class="py-12 px-4">
   <div class="max-w-3xl mx-auto">
@@ -343,19 +364,6 @@ tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- KHỐI 12 - Khan hiếm - countdown THẬT + % đăng ký -->
-<section class="py-12 px-4 text-center">
-  <h2 class="text-2xl font-bold mb-2">Ưu đãi mở bán sớm đóng sau</h2>
-  <p class="text-gray-600 mb-4">Lý do giới hạn: mức 868.000đ chỉ dành cho nhóm học đầu tiên khi khóa mới mở bán để test.</p>
-  <div id="cd" data-deadline="2026-07-03T23:59:00+07:00" class="flex justify-center gap-3 mb-6 font-mono">
-    <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-d>00</b><div class="text-xs">ngày</div></div>
-    <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-h>00</b><div class="text-xs">giờ</div></div>
-    <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-m>00</b><div class="text-xs">phút</div></div>
-    <div class="bg-gray-900 text-white rounded-lg px-3 py-2"><b class="text-2xl" data-s>00</b><div class="text-xs">giây</div></div>
-  </div>
-  <p class="text-xs text-gray-400 max-w-md mx-auto">Ưu đãi mở bán sớm cho nhóm học đầu tiên - chỉ áp dụng trong thời gian đếm ngược.</p>
-</section>
-
 <!-- KHỐI 14 - Bonus stack (chi tiết từng bonus giải micro-problem) -->
 <section class="py-12 px-4 bg-gray-50">
   <div class="max-w-3xl mx-auto">
@@ -384,11 +392,38 @@ tailwind.config = { theme: { extend: {
       <tr class="border-b"><td class="p-3">Bonus 4: Cộng đồng người cùng dựng máy</td><td class="p-3 text-right font-semibold">200.000đ</td></tr>
       <tr class="border-b bg-gray-50"><td class="p-3 font-bold">TỔNG GIÁ TRỊ</td><td class="p-3 text-right font-bold">3.400.000đ</td></tr>
       <tr class="bg-accent/10"><td class="p-3 font-bold">Hôm nay chỉ</td><td class="p-3 text-right"><span class="line-through text-gray-400">2.400.000đ</span> <b class="text-accent text-lg">868.000đ</b></td></tr>
-      <tr><td class="p-3 text-green-700 font-semibold">Bạn tiết kiệm</td><td class="p-3 text-right text-green-700 font-semibold">1.532.000đ (64%)</td></tr>
+      <tr><td class="p-3 text-green-700 font-semibold">Bạn tiết kiệm so với giá niêm yết</td><td class="p-3 text-right text-green-700 font-semibold">1.532.000đ (64%)</td></tr>
     </tbody></table>
   </div>
   <p class="text-xs text-gray-400 text-center max-w-md mx-auto mt-3">Giá trị quy đổi từng mục ước theo mức phí thị trường tương đương cho dịch vụ tương tự - không phải giá niêm yết riêng lẻ đã bán.</p>
-  <div class="text-center mt-6"><a href="#dangky" data-cta class="inline-block bg-accent text-white px-8 py-4 rounded-xl font-bold">NHẬN TRỌN BỘ NGAY - CHỈ 868.000Đ</a></div>
+  <div class="text-center mt-6"><a href="#dangky" data-cta class="inline-block bg-accent text-white px-8 py-4 rounded-xl font-bold">Nhận trọn bộ - 868.000đ</a></div>
+</section>
+
+<!-- KHỐI 15 - Điều kiện để học hiệu quả (dời lên TRƯỚC bảng giá để lọc khách trước khi điền form) -->
+<section class="py-12 px-4">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-2xl font-bold text-center mb-6">Điều kiện để học hiệu quả</h2>
+    <div class="bg-gray-50 border rounded-xl p-6 space-y-3 text-gray-700">
+      <p><b class="text-primary">1.</b> Có laptop hoặc máy tính - mọi thứ làm trên trình duyệt, Windows hay Mac đều được.</p>
+      <p><b class="text-primary">2.</b> Có một Fanpage bạn đang quản trị (chưa có thì lập mới mất 5 phút, trong khóa có hướng dẫn).</p>
+      <p><b class="text-primary">3.</b> Dành được 30-60 phút mỗi ngày trong 1-2 tuần đầu để dựng bộ máy theo từng bài.</p>
+      <p><b class="text-primary">4.</b> KHÔNG cần biết lập trình, không cần giỏi công nghệ - mọi bước đều có video làm mẫu và bộ dây chuyền điền-là-chạy.</p>
+    </div>
+    <p class="mt-4 text-center text-gray-600">Nếu bạn thiếu một trong ba điều đầu tiên, khoan hãy đăng ký - đỡ phí tiền của bạn. Còn đủ rồi thì bộ máy này nằm trong tầm tay.</p>
+  </div>
+</section>
+
+<!-- KHỐI 12 - Khan hiếm - countdown (dời xuống SÁT bảng giá/form để tăng sức ép lúc chốt) -->
+<section class="py-12 px-4 text-center">
+  <h2 class="text-2xl font-bold mb-2">Giá mở bán sớm cho nhóm học đầu tiên</h2>
+  <p class="text-gray-600 mb-4">Lý do giới hạn: mức 868.000đ chỉ dành cho nhóm học đầu tiên khi khóa mới mở bán để test.</p>
+  <div id="cd" class="flex justify-center gap-3 mb-6 font-mono">
+    <div class="bg-plum text-white rounded-lg px-3 py-2"><b class="text-2xl" data-d>00</b><div class="text-xs">ngày</div></div>
+    <div class="bg-plum text-white rounded-lg px-3 py-2"><b class="text-2xl" data-h>00</b><div class="text-xs">giờ</div></div>
+    <div class="bg-plum text-white rounded-lg px-3 py-2"><b class="text-2xl" data-m>00</b><div class="text-xs">phút</div></div>
+    <div class="bg-plum text-white rounded-lg px-3 py-2"><b class="text-2xl" data-s>00</b><div class="text-xs">giây</div></div>
+  </div>
+  <p class="text-xs text-gray-400 max-w-md mx-auto">Giá này chỉ dành cho đợt mở bán sớm, có thể kết thúc khi đủ số lượng ghi danh.</p>
 </section>
 
 <!-- KHỐI 16b - Bảng giá + Form (2 cột) + Bảo hành -->
@@ -407,7 +442,7 @@ tailwind.config = { theme: { extend: {
         <li>✓ Trợ lý cài giọng thương hiệu</li>
         <li>✓ Cộng đồng người cùng dựng máy</li>
       </ul>
-      <a href="#dangky" data-cta class="md:hidden block text-center bg-accent text-white rounded-lg py-3 font-bold mt-6">YES! GIỮ ƯU ĐÃI CHO TÔI</a>
+      <a href="#dangky" data-cta class="md:hidden block text-center bg-accent text-white rounded-lg py-3 font-bold mt-6">Giữ ưu đãi cho tôi</a>
     </div>
 
     <!-- Cột phải: Form thu lead -->
@@ -418,7 +453,7 @@ tailwind.config = { theme: { extend: {
       <input name="sdt" required placeholder="Số điện thoại / Zalo" class="w-full border rounded-lg p-3">
       <input name="email" type="email" placeholder="Email" class="w-full border rounded-lg p-3">
       <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off">
-      <button class="w-full bg-accent text-white rounded-lg py-4 font-bold text-lg">YES! ĐĂNG KÝ GIỮ ƯU ĐÃI CHO TÔI</button>
+      <button class="w-full bg-accent text-white rounded-lg py-4 font-bold text-lg">Đăng ký giữ ưu đãi</button>
       <p class="text-xs text-center text-gray-500">Hoàn tiền nếu khóa không như mô tả · Cầm tay chỉ việc cho người chưa rành kỹ thuật</p>
     </form>
 
@@ -434,20 +469,6 @@ tailwind.config = { theme: { extend: {
   <p class="max-w-2xl mx-auto mt-6 text-center text-sm text-gray-500">Sau khi bấm đăng ký, bạn được chuyển sang trang thanh toán có mã QR để giữ chỗ ngay.</p>
 </section>
 
-<!-- KHỐI 15 - Điều kiện để học hiệu quả (lọc khách, học từ trang Second Brain) -->
-<section class="py-12 px-4">
-  <div class="max-w-2xl mx-auto">
-    <h2 class="text-2xl font-bold text-center mb-6">Điều kiện để học hiệu quả</h2>
-    <div class="bg-gray-50 border rounded-xl p-6 space-y-3 text-gray-700">
-      <p><b class="text-primary">1.</b> Có laptop hoặc máy tính - mọi thứ làm trên trình duyệt, Windows hay Mac đều được.</p>
-      <p><b class="text-primary">2.</b> Có một Fanpage bạn đang quản trị (chưa có thì lập mới mất 5 phút, trong khóa có hướng dẫn).</p>
-      <p><b class="text-primary">3.</b> Dành được 30-60 phút mỗi ngày trong 1-2 tuần đầu để dựng bộ máy theo từng bài.</p>
-      <p><b class="text-primary">4.</b> KHÔNG cần biết lập trình, không cần giỏi công nghệ - mọi bước đều có video làm mẫu và bộ dây chuyền điền-là-chạy.</p>
-    </div>
-    <p class="mt-4 text-center text-gray-600">Nếu bạn thiếu một trong ba điều đầu tiên, khoan hãy đăng ký - đỡ phí tiền của bạn. Còn đủ rồi thì bộ máy này nằm trong tầm tay.</p>
-  </div>
-</section>
-
 <!-- KHỐI 10 - FAQ (khớp nỗi đau) -->
 <section id="faq" class="py-12 px-4 max-w-3xl mx-auto">
   <h2 class="text-2xl font-bold text-center mb-8">Câu hỏi thường gặp</h2>
@@ -456,6 +477,16 @@ tailwind.config = { theme: { extend: {
     <div class="border rounded-lg"><button type="button" class="faqq w-full text-left p-4 font-semibold flex justify-between items-center">Làm bằng tài khoản của tôi hay của bên khác?<span class="faic text-xl">+</span></button><div class="faa hidden p-4 pt-0 text-gray-600">Của chính bạn - bộ máy thuộc về bạn, không phụ thuộc ai, không mất khi ngừng trả phí bên thứ ba.</div></div>
     <div class="border rounded-lg"><button type="button" class="faqq w-full text-left p-4 font-semibold flex justify-between items-center">Auto tương tác có bị Facebook khóa không?<span class="faic text-xl">+</span></button><div class="faa hidden p-4 pt-0 text-gray-600">Có hẳn một chương (Chương 4) dạy ngưỡng an toàn để auto tương tác không dính cờ spam, chạy bền lâu dài.</div></div>
     <div class="border rounded-lg"><button type="button" class="faqq w-full text-left p-4 font-semibold flex justify-between items-center">Học một mình kẹt thì sao?<span class="faic text-xl">+</span></button><div class="faa hidden p-4 pt-0 text-gray-600">Có buổi Zoom cầm tay dựng máy trực tiếp cùng người hướng dẫn, và cộng đồng riêng để hỏi đáp khi bí.</div></div>
+  </div>
+</section>
+
+<!-- KHỐI 17 - CTA chốt cuối (sau FAQ, trước footer) -->
+<section class="py-14 px-4 text-center bg-primary/5">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-bold mb-3">Để Fanpage tự chạy - bắt đầu ngay hôm nay</h2>
+    <p class="text-gray-600 mb-6">Dựng bộ máy một lần, page đăng đều và rep khách 24/7 mà bạn không phải ngồi canh. Ưu đãi mở bán sớm 868.000đ cho nhóm học đầu tiên.</p>
+    <a href="#dangky" data-cta class="inline-block bg-accent text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:opacity-90 transition">TÔI MUỐN DỰNG BỘ MÁY - CHỈ 868.000Đ</a>
+    <p class="mt-2 text-sm text-gray-500">Giá gốc <span class="line-through">2.400.000đ</span> · Hoàn tiền nếu khóa không như mô tả</p>
   </div>
 </section>
 

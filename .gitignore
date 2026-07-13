@@ -1,6 +1,9 @@
 # Nội bộ - KHÔNG public
 ban-chu-vo-test.md
 
+# Đồ nghề build Tailwind - tái tạo bằng: npm i && npx tailwindcss -i tailwind-input.css -o assets/tailwind.css --minify
+node_modules/
+
 # File dev / quảng cáo riêng - trang không dùng tới
 serve.mjs
 video-ads.mp4
