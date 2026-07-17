@@ -200,7 +200,6 @@
       <div class="panel panel-pay">
         <div class="qr-wrap">
           <h2 style="margin-bottom:4px">Chuyển khoản bằng mã QR</h2>
-          <p class="qr-hint">Kiểm tra đúng tên <b id="vHolder2">CONG TY TNHH WINNET PRO</b> rồi xác nhận.</p>
 
           <img id="qrImg" class="qr-img" src="assets/qr-mbbank.jpg" alt="Mã QR chuyển khoản" />
 
@@ -230,7 +229,7 @@
             </div>
           </div>
 
-          <p class="qr-hint" style="margin-top:14px">Vui lòng ghi <b>đúng nội dung chuyển khoản</b></p>
+          <p class="qr-hint" style="margin-top:14px;margin-bottom:0">Vui lòng ghi <b>đúng nội dung chuyển khoản</b></p>
 
           <button class="btn btn-paid" id="paidBtn">Tôi đã chuyển khoản ✓</button>
 
@@ -279,6 +278,13 @@
             <p>Buổi học cầm tay từng bước, xong vẫn có cộng đồng hỏi đáp khi bạn vướng.</p>
           </div>
         </div>
+      </div>
+
+      <!-- 3 tem tin cậy -->
+      <div style="display:flex;justify-content:center;align-items:center;gap:clamp(14px,4vw,30px);margin:2px 0 18px">
+        <img src="assets/tem-100-quality.png" alt="100% chất lượng" style="width:126px;max-width:29%;height:auto">
+        <img src="assets/tem-24-7.png" alt="Hỗ trợ 24/7" style="width:126px;max-width:29%;height:auto">
+        <img src="assets/tem-30-days.png" alt="Đảm bảo 30 ngày" style="width:126px;max-width:29%;height:auto">
       </div>
 
     </main>
@@ -364,7 +370,7 @@
 
   // ---- 4) Ngân hàng + giá ----
   setText('vBank', PAY.bankName); setText('vAcc', PAY.account);
-  setText('vHolder', PAY.holder); setText('vHolder2', PAY.holder);
+  setText('vHolder', PAY.holder);
   var amountNum = (PAY.amount || '').replace(/\D/g, '');
   if (amountNum) {
     setText('vAmount', vnd(amountNum) + ' đ');
